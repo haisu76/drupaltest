@@ -1,0 +1,24 @@
+#container {margin:0 auto; width:100%;}
+#header { /* height:88px; */ margin-bottom:5px;}
+#menu { height:30px; background:#693; margin-bottom:5px;}
+#main_body { background:url(bg.gif) 0 0 repeat-y; zoom:1; margin-bottom:5px;}
+
+/* 左右布局 */
+/*
+#sidebar { float:left; width:200px;background:#cf9;}
+#content { margin-left:205px !important; margin-left:202px; height:auto !important; height:100px; background:#ffa;}
+*/
+
+/* 右左布局 */
+#sidebar { float:right; width:200px; /* background:#cf9; */}
+#content { float:left; width:780px; height:auto !important; height:100px; /* background:#ffa; */}
+
+/* 通栏全宽，加上layout_full_width即可 */
+.layout_full_width #sidebar { display:none; width:0 !important; margin:0 !important; }
+.layout_full_width #content {width:100% !important; margin-right:0 !important;}
+#footer { height:60px; line-height:60px; color:#c5c5c5; text-align:center;}
+.clear { clear:both; /* height:0; font-size: 1px; line-height: 0px; */}
+
+/* 通栏全宽，加上layout_full_width即可 */
+.layout_full_width #sidebar { display:none; width:0 !important; margin:0 !important; }
+.layout_full_width #content {width:100% !important; margin-right:0 !important;}

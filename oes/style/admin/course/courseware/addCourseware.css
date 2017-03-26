@@ -1,0 +1,7 @@
+.action{ vertical-align:baseline;}
+.action_link{ float:left;}
+/*del  2012 12 03
+.action_toolbar{ display:block; top:-15px; top:-0px\9\0; +top:-45px; right:-4px; background:#f7f9ff url('../../../../images/action_toolbar_bg.png') repeat-x;}*/
+.action_toolbar{ display:block; top:5px; top:15px\9\0; *top:-10px; right:-4px; background:#f7f9ff url('../../../../images/action_toolbar_bg.png') repeat-x;}
+
+.action_toolbar_right{ position:absolute; top:100%; overflow:hidden; width:4px; height:4px; right:1px; background:url('../../../../images/action_toolbar_right2.png') no-repeat -4px -7px;}

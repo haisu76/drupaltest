@@ -1,0 +1,16 @@
+name = League Minute
+description = Games minute to minute
+package = League
+dependencies[] = league
+dependencies[] = league_game
+core = 7.x
+version = 7.x
+;configure = admin/config/league/league
+
+
+; Information added by Drupal.org packaging script on 2014-04-24
+version = "7.x-1.0-beta6"
+core = "7.x"
+project = "league"
+datestamp = "1398376432"
+

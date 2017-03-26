@@ -1,0 +1,109 @@
+/*=====================  index  ==================================*/
+.home_page .box, .home_page .box_inner { background:none;}
+.panel_2 {width:100%; overflow:hidden;}
+.item_block {float:left;  margin-right:10px; margin-bottom:10px; z-index:100; overflow:hidden;}
+
+/*  background:url(../images/login_light.png) no-repeat right top; */
+	.item_block .icon {width:55px; height:100px; float:left; text-align:left; overflow:hidden; position:relative;/*  left:5px; *left:0px; */}
+		.item_block .icon img {position:relative; overflow:hidden; left:5px; top:10px; -ms-interpolation-mode: bicubic; width:43px; height:43px; display:block;}
+		
+	.item_block .content {
+	/* overflow:hidden; */
+		position:relative;
+		/* top:10px; */
+	}
+		.item_block .content .inner {width:100%; float:left;}
+		
+		.item_block .content h1 {font-size:18px; color:#fff; font-weight:normal;}
+		.item_block .content .menu_inner { float:left; display:block;margin-top:0px; *margin-top:13px; margin-left: -5px; *margin-left: 0px;}
+		.item_block .content .menu_inner a {color:#fff; text-decoration:none; display:inline-block;
+			padding:0 5px; line-height:21px; overflow:hidden;
+			opacity:0.8;
+			/* For IE 6 */
+			/* filter:alpha(opacity=80); */
+			/* For IE 8 */
+			-MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+			*font-family:arial;
+		}
+		.item_block .content .menu_inner a:hover {color:#fff; text-decoration:underline; filter:alpha(opacity=100); opacity:1.0}
+
+
+/* 各区块首页、内页颜色统一定义 */
+.block_inner {background:#999; width:100%; height:100%; display:block; overflow:hidden;} /* 该容器用于存放默认背景色定义，以便于内页的菜单颜色定义共用同一个CSS中选择器 */
+/* .block_inner:hover {background:#888 url(../images/itemBg.jpg) no-repeat top right !important; } */ /* 可让鼠标移上区块后，显示背景图片 */
+
+
+.block_1 {}
+	.block_1 .block_inner {width:368px; height:140px;}	/* 首页区块尺寸 */
+	.block_1 .block_inner, .block_1 .nav span {background:#5455b7;} /* 首页区块和内页菜单标题背景色 */
+	.block_1  /* 内页菜单文字颜色 */
+	
+
+.block_2 {}
+	.block_2 .block_inner {width:250px; height:140px;}
+	.block_2 .block_inner, .block_2 .nav span {background:#3a3cc1;}
+ 
+
+.block_3 {}
+	.block_3 .block_inner {width:159px; height:140px;}
+	.block_3 .block_inner, .block_3 .nav span {background:#a8620b;}
+
+
+.block_4 {}
+	.block_4 .block_inner {width:193px; height:140px;}
+	.block_4 .block_inner, .block_4 .nav span {background:#7431a3;}
+ 
+
+.block_5 {}
+	.block_5 .block_inner {width:230px; height:140px;}
+	.block_5 .block_inner, .block_5 .nav span {background:#60a2ee;}
+ 
+
+.block_6 {}
+	.block_6 .block_inner {width:215px; height:140px;}
+	.block_6 .block_inner, .block_6 .nav span {background:#1fb3aa;}
+
+
+.block_7 {}
+	.block_7 .block_inner {width:163px; height:140px;}
+	.block_7 .block_inner, .block_7 .nav span {background:#ce432e;}
+
+
+.block_8 {}
+	.block_8 .block_inner {width:159px; height:140px;}
+	.block_8 .block_inner, .block_8 .nav span {background:#d87a00;}
+
+
+.block_9 {}
+	.block_9 .block_inner {width:193px; height:140px;}
+	.block_9 .block_inner, .block_9 .nav span {background:#a3318f;}
+
+
+.block_10 {}
+	.block_10 .block_inner {width:455px; height:160px;}
+	.block_10 .block_inner, .block_10 .nav span {background:#8505bb;}
+
+
+.block_11 {}
+	.block_11 .block_inner {width:302px; height:160px;}
+	.block_11 .block_inner, .block_11 .nav span {background:#0053e0;}
+
+
+.block_12 {}
+	.block_12 .block_inner {width:223px; height:160px;}
+	.block_12 .block_inner, .block_12 .nav span {background:#0fb23b;}
+
+
+.block_13 {}
+	.block_13 .block_inner {width:634px; height:118px;}
+	.block_13 .block_inner, .block_13 .nav span {background:#0283c5;}
+ 
+
+.block_14 {}
+	.block_14 .block_inner {width:183px; height:118px;}
+	.block_14 .block_inner, .block_14 .nav span {background:#a78e02;}
+
+
+.block_15 {}
+	.block_15 .block_inner {width:163px; height:118px;}
+	.block_15 .block_inner, .block_15 .nav span {background:#00a255;}

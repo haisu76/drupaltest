@@ -1,0 +1,156 @@
+/**
+ * @file
+ * Styles are organized using the SMACSS technique. @see http://smacss.com/book/
+ *
+ * When you turn on CSS aggregation at admin/config/development/performance, all
+ * of these @include files will be combined into a single file.
+ */
+
+/* HTML element (SMACSS base) rules */
+@import "normalize.css";
+
+/* Layout rules */
+@import "layouts/responsive.css";
+
+/* Component (SMACSS module) rules */
+@import "components/misc.css";
+/* Optionally, add your own components here. */
+@import "print.css";
+
+/* SMACSS theme rules */
+/* @import "theme-A.css"; */
+/* @import "theme-B.css"; */
+
+
+body { background:url(../images/bg-gradient.png) repeat-x scroll -40px 0px transparent;padding-top: 40px;
+       font: 0.8em/165% "Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans-serif;
+	   margin:0; padding:0; outline:0 none; vertical-align:baseline; }
+
+h1, h2, h3, h4, h5, h6 { margin:25px 0 20px 0; line-height:120%; text-shadow: 1px 1px 1px #EAF1EA; font-family: Myriad Pro,"Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans-serif; }
+
+h1 { font-size: 32px; margin:0 0 20px 0; }
+
+h2 { font-size: 20px; color:#1487d4; font-weight:normal; }
+
+h3 { font-size: 130%; }
+
+h4 { font-size: 110%; }
+
+/* 
+* Layout 
+*/
+
+#header { clear:both; background:#3C96DF }
+
+#header-inside { margin: 0 auto; padding:40px 0; overflow:hidden; } 
+
+#header-menu { clear:both; }
+
+#logo { display:block; overflow:hidden; padding:0; margin:0; }
+
+#logo a{ padding:0; margin:0; display:block; overflow:hidden; }
+
+#logo img { padding:0; margin:0; display:block; overflow:hidden; }
+
+#logo {
+  float: left; /* LTR */
+  padding: 15px 15px 15px 10px; /* LTR */
+}
+
+#name-and-slogan {
+
+  float: left; /* LTR */
+  padding-top: 55px;
+  margin: 0 0 30px 15px; /* LTR */
+}
+#site-name {
+  clear:both; 
+  left: 30px;
+  top: 60px;
+  font-size: 200%;
+  font-family:"ºÚÌå";
+  color: #000000;
+  line-height: 1;
+}
+h1#site-name {
+  margin: 0;
+}
+#site-name a {
+  font-weight: normal;
+}
+
+
+
+/*»ÃµÆÆ¬*/
+.skin-default{
+     position: relative;
+}
+.views-slideshow-controls-bottom {
+     position: absolute;
+     bottom: 4px;
+     padding: 10px;
+     left: 10;
+     z-index: 10;
+     background-color: rgba(0, 0, 0, 0.7);
+   }
+.views-slideshow-pager-field-item{
+     float: left;
+     margin-right: 20px;
+     cursor: pointer;
+}
+.views_slideshow_pager_field .active img {
+     border-bottom: 3px solid #0779BF;
+
+}
+
+.views_slideshow_controls_text_previous a, .views_slideshow_controls_text_next a{
+     position: absolute;
+     top: -100%;
+     left: 15px;
+     width: 40px;
+     height: 40px;
+     margin-top: -20px;
+     font-size: 60px;
+     font-weight: 100;
+     line-height: 30px;
+     color: white;
+     text-align: center;
+     background: #222;
+     border: 3px solid white;
+     -webkit-border-radius: 23px;
+     -moz-border-radius: 23px;
+     border-radius: 23px;
+     opacity: 0.5;
+     filter: alpha(opacity=50);
+     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.views_slideshow_controls_text_next a{
+     right: 15px;
+     left: auto;
+}
+.views_slideshow_controls_text_previous a:hover, .views_slideshow_controls_text_next a:hover{
+     color: white;
+     text-decoration: none;
+     opacity: 0.9;
+     filter: alpha(opacity=90);
+}
+.views_slideshow_controls_text_pause{
+     position: absolute;
+     right: 20px;
+     bottom: 20px;
+}
+.views_slideshow_controls_text_pause a{
+     color: #fff;
+     opacity: 0.5;
+     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+     background: #222;
+     border: 2px solid white;
+     padding: 3px;
+     font-size: 12px;
+}
+.views_slideshow_controls_text_pause a:hover{
+     color: white;
+     text-decoration: none;
+     opacity: 0.9;
+     filter: alpha(opacity=90);
+}

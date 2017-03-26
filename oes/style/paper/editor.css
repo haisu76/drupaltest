@@ -1,0 +1,76 @@
+html,body {padding:0; margin:0;}
+table {border-collapse:collapse;}
+h1 {font-size:13px; font-weight:normal;}
+
+
+.editor_exam {width:100%; border-collapse:separate;}
+.editor_exam td {padding:0 !important;}
+.item_left {
+	background:#bdeaf8;
+    text-align: center;
+    width: 32px;
+	vertical-align:top;
+	border:1px solid #01c1ff;
+}
+
+.item_left_a {
+	background:#ccc;
+    text-align: center;
+    width: 7px;
+	vertical-align:top;
+	border:1px solid #ccc;
+	font-size:0px; padding:0; margin:0; line-height:0;
+}
+
+.item_right {}
+
+.item_left h1 {font-weight:normal; width:100%; height:31px; line-height:31px; background:#64b4ff; color:#fff; margin: 0; margin-bottom:6px;}
+.item_left a:hover {}
+.textareaHolder {
+	/* height:90px; */ /* 此处控制影响文本框高度 */
+	position:relative;
+	margin-bottom:10px;
+}
+
+.textareaHolder .textarea_inner {padding-right:8px;  height:100%;}
+
+* html textarea{height:100%;}
+
+.editor_exam .editor_item {border-left:0 !important;}
+.editor_item textarea {
+	border:0;
+	width:100%; min-height:100%;
+	resize: none;
+	border:1px solid #fff;
+	padding:3px;
+	float: left;
+	/* overflow-y:scroll; */
+	font-size: 13px;
+	font-family:宋体,Microsoft YaHei, Tahoma, Arial;
+
+}
+
+.editor_item {border:1px solid #ccc;   }
+.editor_item_inner {  width:100%; overflow:hidden; }
+
+
+/******************************/
+
+.editor_item .toolbar { height:31px; line-height:31px; overflow:hidden; background:#fafafa; padding:0 3px; border:1px solid #ccc; border-left:0; border-right:0; border-top:0;}
+	.toolbar a {
+		width:24px; height:24px; line-height:24px; display:inline-block;
+		border:1px solid #fafafa;
+		text-align:center;
+		margin:0 2px;
+		padding:0;
+		float:left; position:relative; top:3px;
+	}
+	.editor_item .editor_line_v {float:left;}
+	
+	.editor_item .toolbar a:hover { border:1px solid #01c1ff; background:#fcfcfc url(../images/btn_normal.png) repeat-x bottom;}
+	.editor_item .toolbar img {position: relative; top: 4px; border:none; padding-right:0 !important;}
+
+/******************************/
+.icon_radio_on, .icon_radio_off:hover {background:url(../images/icon/icon_radio_on.gif) no-repeat center center; width:16px; height:16px; display:inline-block; position:relative; z-index:200; position:relative; top:2px; padding: 0 3px;}
+.icon_radio_off {background:url(../images/icon/icon_radio_off.gif) no-repeat center center; width:16px; height:16px; display:inline-block; position:relative; z-index:200;}
+

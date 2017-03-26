@@ -1,0 +1,5 @@
+name = weixin core
+description = weixin platform
+package = weixin
+core = 7.x
+dependencies[] = lightbox2

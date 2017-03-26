@@ -1,0 +1,39 @@
+﻿/* 奇偶行颜色 */
+.odd_bg { background:#fff;}
+.even_bg { background:#fafafa;}
+
+/******************************/
+
+/* 高亮颜色，通过jquery.highlight.js可支持DIV、LI、TD、TR、FORM等 */
+
+.highlight { 
+	background:#effdff !important;
+	cursor: default; height:25px; line-height:25px;
+	color:#09F;
+}
+
+
+.highlight td {color:#3582da !important; }
+.row-highlight{border:1px solid red !important; background:#ccc;}
+
+.highlight-selected{ background:#D9EFFD !important;}
+.~highlight-selected{ background:#D9EFFD url(../images/itemBg_v_left.jpg) left center no-repeat !important; /* background:#fea800 !important; */}
+
+.highlight-selected td{ color:#333 !important;}
+.highlight-selected td a{/* color:#fff !important; */}
+
+/******************************/
+.highlight2 { 
+	background:#cef7ff;
+}
+
+.highlight2 td {/* border:1px solid #9acaff !important; */ border-right:none !important; color:#3582da !important;}
+.highlight2 input {color:#3582da !important;}
+
+
+
+
+
+
+
+

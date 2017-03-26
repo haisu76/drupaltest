@@ -1,0 +1,145 @@
+<?php
+
+function weixin_payment_init() {
+	//dpm('weixin payment init');
+}
+
+
+
+function weixin_payment_menu() {
+	$items['weixin/configuration/payment_configure'] = array(
+		'title' => 'weixin payment configuration',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('weixin_payment_configure_form'),
+		'access arguments' => array('access weixin configure'),
+//		'file' => 'includes/weixin.configuration.inc',
+		'type' => MENU_LOCAL_TASK,
+	);
+	$items['weixin/payment_qrcode'] = array(
+		'title' => 'weixin payment page',
+		'page callback' => 'weixin_payment_qrcode',
+		'access callback' => TRUE,
+//		'file' => 'includes/weixin.configuration.inc',
+		'type' => MENU_NORMAL_ITEM,
+	);
+	return $items;
+}
+
+function weixin_payment_qrcode() {
+	return theme('weixin_payment_qrcode');
+}
+
+function weixin_payment_theme() {
+	$theme = array(
+		'weixin_payment_qrcode' => array(
+			'template' => 'templates/weixin_payment_qrcode',
+		),
+	);
+	return $theme;
+}
+
+function weixin_payment_configure_form($form, $form_state) {
+	$form=array();
+	$form['description']=array(
+		'#type' => 'item',
+		'#markup' => t('Please configure the weixin payment.'),
+	);
+	$form['payment_mchid'] = array (
+		'#type' => 'textfield',
+		'#title' => t('weixin payment MCHID'),
+		'#default_value' => variable_get('weixin_mchid'),
+	);
+	$form['payment_paysignkey'] = array (
+		'#type' => 'textfield',
+		'#title' => t('weixin paysign key'),
+		'#default_value' => variable_get('weixin_paysignkey'),
+	);
+	$form['submit'] = array(
+		'#type' => 'submit',
+		'#value' => 'Save changes',
+	);
+	return $form;
+}
+
+function weixin_payment_configure_form_submit($form, &$form_state) {
+	$testdata = 'drupal';
+	variable_set('weixin_mchid',$form_state['values']['payment_mchid']);
+	variable_set('weixin_paysignkey',$form_state['values']['payment_paysignkey']);
+	drupal_set_message(t('set weixin mchid successfully'));
+//	dpm(createNativeUrl($testdata));
+}
+
+function weixin_payment_qr_configure_form($form,&$form_state)
+{
+	$form = array();
+	$qrcode_type = array('0' => t('Permanent'), '1'=> t('Temporary'));
+	$form['description'] = array(
+		'#type' => 'item',
+		'#title' => t('Payment QR code configure'),
+	);
+	$form['weixin_product_id'] = array (
+		'#type' => 'textfield',
+		'#title' => t('weixin product id'),
+		'#description' => t('weixin item name'),
+	);
+	$form['weixin_product_name'] = array (
+		'#type' => 'textfield',
+		'#title' => t('weixin product name'),
+		'#description' => t('weixin item name'),
+	);
+	$form['weixin_product_price'] = array(
+		'#title' => t('weixin product price'),
+		'#type'  => 'textfield',
+	);
+        $form['submit'] = array(
+		'#type' => 'submit',
+		'#value' => 'Add',
+        );
+	return $form;
+}
+
+function getSignature($arrdata,$method="sha1") {
+	if (!function_exists($method)) return false;
+	ksort($arrdata);
+	$paramstring = "";
+	foreach($arrdata as $key => $value)
+	{
+		if(strlen($paramstring) == 0)
+			$paramstring .= $key . "=" . $value;
+		else
+			$paramstring .= "&" . $key . "=" . $value;
+	}
+	$paySign = $method($paramstring);
+	return $paySign;
+}
+
+function generateNonceStr($length=16){
+	// key string/
+	$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+	$str = "";
+	for($i = 0; $i < $length; $i++)
+	{
+		$str .= $chars[mt_rand(0, strlen($chars) - 1)];
+	}
+	return $str;
+}
+
+function createNativeUrl($productid){
+	$nativeObj["appid"] = variable_get('weixin_appid');
+	//	$nativeObj["appkey"] = $this->paysignkey;
+	$nativeObj["appkey"] = 'qinGfAn201411181110WeiXinDevTemp';
+	$nativeObj["productid"] = urlencode($productid);
+	$nativeObj["timestamp"] = time();
+	$nativeObj["noncestr"] = generateNonceStr();
+	$nativeObj["sign"] = getSignature($nativeObj);
+	unset($nativeObj["appkey"]);
+	$bizString = "";
+	foreach($nativeObj as $key => $value)
+	{
+		if(strlen($bizString) == 0)
+			$bizString .= $key . "=" . $value;
+		else
+			$bizString .= "&" . $key . "=" . $value;
+	}
+	return "weixin://wxpay/bizpayurl?".$bizString;
+}

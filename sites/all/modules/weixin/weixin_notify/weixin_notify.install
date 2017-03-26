@@ -1,0 +1,41 @@
+<?php
+
+function weixin_notify_schema() {
+  $schema = array();
+
+  $schema['weixin_message_notify'] = array(
+    'description' => 'wechat private message notification settings for each user ',
+    'fields' => array(
+      'user_id' => array(
+        'description'   => 'ID of the user',
+        'type'          => 'int',
+        'not null'      => TRUE,
+        'unsigned'      => TRUE,
+      ),
+      'wechat_pm_notify_is_enabled' => array(
+        'description'   => 'Email Notification Status (Enabled=1, Disabled=0)',
+        'type'          => 'int',
+        'not null'      => TRUE,
+        'unsigned'      => TRUE,
+      ),
+      'wechat_login_notify_is_enabled' => array(
+        'description'   => 'login Notification Status (Enabled=1, Disabled=0)',
+        'type'          => 'int',
+        'not null'      => TRUE,
+        'unsigned'      => TRUE,
+      ),
+      'wechat_user_points_notify_is_enabled' => array(
+        'description'   => 'login Notification Status (Enabled=1, Disabled=0)',
+        'type'          => 'int',
+        'not null'      => TRUE,
+        'unsigned'      => TRUE,
+      ),
+    ),
+    'unique keys' => array(
+      'user_id' => array('user_id')
+    ),
+  );
+
+  return $schema;
+}
+

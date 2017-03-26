@@ -1,0 +1,307 @@
+<?php
+/**
+ * @file
+ * Code for the Wechat views.
+ */
+
+/**
+* hook_menu
+*/
+function wechat_views_menu(){
+
+      $items = array();
+
+      /** Admin configuration group.
+       * $items['admin/wechat/config'] = array(
+       * 'title' => 'Wechat Views',
+       * 'description' => 'Administer Wechat Views',
+       * 'access arguments' => array('administer wechat views'),
+       * );
+       */
+
+      $items['admin/wechat/config/wechat_views'] = array(
+        'title' => 'Config Wechat Views',
+        'description' => t('Wechat Views Configuration Page'),
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('wechat_views_settings_form'),
+        'access arguments' => array('access administration pages'),
+        'type' => MENU_NORMAL_ITEM,
+        );
+  return $items;
+}
+
+/**
+* hook_form
+*/
+function wechat_views_settings_form($form, $form_state) {
+
+  //$options[0]=t('Solr');
+  //$options[1]=t('Default Search');
+  $options = array(
+    'solr'=>'Solr',
+    'default'=>'Default Search',
+  );
+  
+  $form['wechat_views_search'] = array(
+    '#title' => t('Select Search Method'),
+    '#description' => t('select a method for search.'),
+    '#type' => 'select',
+    '#options' => $options,
+    '#default_value' => variable_get('wechat_views_search',"default"),
+    '#required' => TRUE,
+  );
+  
+  $form['wechat_views_name'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Views Name'),
+    '#description' => t('Machine name of search view.'),
+    '#default_value' => variable_get('wechat_views_name', 'search1'),
+    '#required' => TRUE,
+  );
+  $form['wechat_views_dispaly'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Views Display'),
+    '#description' => t('Machine name of views display'),
+    '#default_value' => variable_get('wechat_views_dispaly', "page"),
+    '#required' => TRUE,
+  );
+  $form['wechat_views_filter_identifier'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Filter identifier'),
+    '#description' => t('Filter identifier of seach Views'),
+    '#default_value' => variable_get('wechat_views_filter_identifier', "keyword"),
+    '#required' => TRUE,
+  );
+  return system_settings_form($form);
+}
+
+
+
+/**
+ * hook menu form
+ */
+function wechat_views_form_menu_edit_item_alter(&$form, $form_state) {
+  $item = $form['original_item']['#value'];
+  // Restrict access to the new form elements.
+  if ($item['menu_name'] !== 'wechat') {
+    return;
+  }
+  $form['options']['attributes']['wechat_view_name'] = array(
+    '#type' => 'textfield',
+    '#title' => t('View name'),
+    '#description' => t('The machine name of the view'),
+    '#weight' => 5,
+    '#default_value' => isset($item['options']['attributes']['wechat_view_name']) ? $item['options']['attributes']['wechat_view_name'] : '',
+    '#states' => array(
+      'visible' => array(
+        ':input[name="options[attributes][wechat_type]"]' => array('value' => 'click'),
+      ),
+    ),
+  );
+  $form['options']['attributes']['wechat_view_display'] = array(
+    '#type' => 'textfield',
+    '#title' => t('View display'),
+    '#description' => t('The display of the view'),
+    '#weight' => 6,
+    '#default_value' => isset($item['options']['attributes']['wechat_view_display']) ? $item['options']['attributes']['wechat_view_display'] : '',
+    '#states' => array(
+      'visible' => array(
+        ':input[name="options[attributes][wechat_type]"]' => array('value' => 'click'),
+      ),
+    ),
+  ); 
+  $form['options']['attributes']['wechat_view_arg'] = array(
+    '#type' => 'textfield',
+    '#title' => t('View argument'),
+    '#description' => t('The argument of the view'),
+    '#weight' => 7,
+    '#default_value' => isset($item['options']['attributes']['wechat_view_arg']) ? $item['options']['attributes']['wechat_view_arg'] : '',
+    '#states' => array(
+      'visible' => array(
+        ':input[name="options[attributes][wechat_type]"]' => array('value' => 'click'),
+      ),
+    ),
+  ); 
+} 
+
+/**
+ * get_view_info_by_event
+ */
+function wechat_view_get_view_info_by_event($key) {
+
+  if (!$key) {
+    return '';
+  }
+  $view = array();
+  $menu_tree = menu_build_tree('wechat', array('max_depth' => 2));
+  foreach ($menu_tree as $val) {
+    if ($val['link']['hidden']) {
+      continue;
+    }
+    if (!empty($val['below'])) {
+      foreach ($val['below'] as $subval) {
+        if ($subval['link']['hidden']) {
+          continue;
+        }
+        if ($subval['link']['options']['attributes']['wechat_key'] == $key) {
+          $view['name'] = isset($subval['link']['options']['attributes']['wechat_view_name']) ? $subval['link']['options']['attributes']['wechat_view_name'] : "";
+		  $view['display'] = isset($subval['link']['options']['attributes']['wechat_view_display']) ? $subval['link']['options']['attributes']['wechat_view_display'] : "";
+		  $view['arg'] = isset($subval['link']['options']['attributes']['wechat_view_arg']) ? $subval['link']['options']['attributes']['wechat_view_arg'] : "";
+        }
+      }
+    }
+    elseif ($val['link']['options']['attributes']['wechat_key'] == $key) {
+        $view['name'] = isset($subval['link']['options']['attributes']['wechat_view_name']) ? $subval['link']['options']['attributes']['wechat_view_name'] : "";
+		$view['display'] = isset($subval['link']['options']['attributes']['wechat_view_display']) ? $subval['link']['options']['attributes']['wechat_view_display'] : "";
+		$view['arg'] = isset($subval['link']['options']['attributes']['wechat_view_arg']) ? $subval['link']['options']['attributes']['wechat_view_arg'] : "";
+
+    }
+  }
+  return $view;
+}
+
+/**
+ * Implementation of hook_wechat_build_response_message().
+ */
+function wechat_views_wechat_build_response_message($response_message, $request_message) {
+  //这里主要是实现用户绑定。
+  //watchdog('wechat', '进入hook_wechat_build_response_message'); 
+  $request_message_wrapper = entity_metadata_wrapper('wechat_request_message', $request_message);
+  $response_message_wrapper = entity_metadata_wrapper('wechat_response_message', $response_message);
+  if ($request_message->msg_type == 'text') {
+    $wechat_content = $request_message_wrapper->wechat_content->value();
+	//watchdog('wechat', 'wechat_content:' .$wechat_content);
+	$search_method = variable_get('wechat_views_search',"default");
+	if($search_method == "solr"){
+	  $nids = wechat_view_get_nids_by_view_solr($wechat_content);
+	}else{
+	  $nids = wechat_view_get_nids_by_view_default($wechat_content);
+	}
+	//watchdog('wechat', 'wechat_content:' .$wechat_content);
+    if(!empty($nids)){
+	  $response_message->msg_type = 'news';
+	  $response_message_wrapper = entity_metadata_wrapper('wechat_response_message', $response_message);
+     //watchdog('wechat', 'nids:');
+	   $response_message_wrapper->wechat_article->set($nids);
+    }	
+  }
+
+  if ($request_message->msg_type == 'voice') {
+    $wechat_content = $request_message_wrapper->wechat_recognition->value();
+	if (!empty($wechat_content)) {
+	  //watchdog('wechat', 'wechat_content:' .$wechat_content);
+	  $search_method = variable_get('wechat_views_search',"default");
+	  if($search_method == "solr"){
+	    $nids = wechat_view_get_nids_by_view_solr($wechat_content);
+	  }else{
+	    $nids = wechat_view_get_nids_by_view_default($wechat_content);
+	  }
+    }
+	//watchdog('wechat', 'wechat_content:' .$wechat_content);
+    if(!empty($nids)){
+	  $response_message->msg_type = 'news';
+	  $response_message_wrapper = entity_metadata_wrapper('wechat_response_message', $response_message);
+     //watchdog('wechat', 'nids:');
+	   $response_message_wrapper->wechat_article->set($nids);
+    }	
+  }
+  
+  
+  if ($request_message->msg_type == 'event') {
+    //watchdog('wechat', '进入event'); 
+
+    //
+    $wechat_event = $request_message_wrapper->wechat_event->value();
+    //watchdog('wechat', 'wechat_event:' .$wechat_event); 
+    if ($wechat_event == 'CLICK') {
+      //watchdog('wechat', '进入scan');
+      $event_key = $request_message_wrapper->wechat_event_key->value();
+      //watchdog('wechat', 'event_key：' . $event_key);
+      if (!empty($event_key)) {
+        $view = wechat_view_get_view_info_by_event($event_key);
+        if(!empty($view['name'])){
+	    //watchdog('wechat', 'wechat_event:123'); 
+		$nids = wechat_view_get_nids_by_view($view);
+		  if(!empty($nids)){
+            $response_message->msg_type = 'news';
+		    $response_message_wrapper = entity_metadata_wrapper('wechat_response_message', $response_message);
+
+		     $response_message_wrapper->wechat_article->set($nids);
+		  }
+		}
+
+      }
+    }
+	//地理位置信息事件，因为频率太多，所以我们这里直接退出。
+    if ($wechat_event == 'LOCATION') {
+	  exit;
+    }	
+  }
+
+}
+
+/**
+ * get_view_info_by_event
+ */
+function wechat_view_get_nids_by_view($view) {
+  $nids = array();
+  $results = views_get_view_result($view['name'], $view['display'], $view['arg']);
+  foreach($results as $result){
+    if(isset($result->nid)){
+	  $nids[] = $result->nid;
+	}
+  }
+  return $nids;
+}
+
+/**
+ * get_view_info_by_event
+ */
+function wechat_view_get_nids_by_view_solr($content) {
+  $nids = array();
+  $view_name = variable_get('wechat_views_name', 'search');
+  $view_dispaly =variable_get('wechat_views_dispaly', "page");
+  $filter_identifier =variable_get('wechat_views_filter_identifier', "keyword");
+  $view = views_get_view($view_name);
+  $view->set_exposed_input(array($filter_identifier => $content));
+$display_id = $view_dispaly;
+$view->set_display($display_id);
+$view->pre_execute();
+$view->execute();
+$results =  $view->result;
+//print debug($results);
+  //$results = views_get_view_result($view['name'], $view['display'], $view['arg']);
+  foreach($results as $result){
+  //print debug($result);
+    if(isset($result->_entity_properties)){
+	  $nids[] = $result->_entity_properties['search_api_id'];
+	}
+  }
+  return $nids;
+}
+
+/**
+ * get_view_info_by_event
+ */
+function wechat_view_get_nids_by_view_default($content) {
+  $nids = array();
+  $view_name = variable_get('wechat_views_name', 'search1');
+  $view_dispaly =variable_get('wechat_views_dispaly', "page");
+  $filter_identifier =variable_get('wechat_views_filter_identifier', "keyword");
+  $view = views_get_view($view_name);
+  $view->set_exposed_input(array($filter_identifier => $content));
+$display_id = $view_dispaly;
+$view->set_display($display_id);
+$view->pre_execute();
+$view->execute();
+$results =  $view->result;
+//print debug($results);
+  //$results = views_get_view_result($view['name'], $view['display'], $view['arg']);
+  foreach($results as $result){
+  //print debug($result);
+    if(isset($result->nid)){
+	  $nids[] = $result->nid;
+	}
+  }
+  return $nids;
+}

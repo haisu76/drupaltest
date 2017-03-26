@@ -1,0 +1,82 @@
+﻿/******************************/
+.player_logo {
+	width:110px; height:28px;
+	background:url(../images/player/player_logo.png) no-repeat;
+	display:block;
+	text-indent:-500px; overflow:hidden; text-align: left;
+	float:right; position: relative; right: 5px; top: -1px;
+	filter:alpha(opacity=70); opacity:0.7;
+}
+
+.player_logo:hover {filter:alpha(opacity=100); opacity:1.0;}
+
+.player {overflow: hidden; padding-bottom: 10px;}
+.player .inner {}
+
+.col_LR2 .sidebar	{float:right; width:270px; /* margin-left: 270px; */ text-align: left;}
+.col_LR2 .con 		{margin-right:280px !important; margin-right:280px; height:auto !important; text-align:right;}
+
+.video_player {}
+
+#flashcontent {width:100%; /* width:720px; */ height:350px; float:left;}
+.ts { background:red;}
+.video_player .player_container {}
+
+/******************************/
+/* 视频播放列表 */
+.playlist {
+	width:100%; height:350px;
+	z-index:9999;
+}
+
+.playlist .inner 	{ padding:0 8px; border:1px solid #ddd;}
+.playlist h1.title	{ height:35px; line-height:35px; border-bottom:1px solid #ddd;}
+.playlist h1.title .col_LR 			{/* height:25px;  */line-height:25px; overflow:hidden;}
+.playlist h1.title .col_LR .inner	{padding:0; border:none;}
+.playlist h1.title .col_LR .inner .sidebar 	{height:35px;float:right; width:50px; text-align: right;}
+.playlist h1.title .col_LR .inner .con 		{ margin-right:55px !important; height:auto !important; text-align:left;}
+
+.playlist h1.title .col_LR .inner .sidebar .close_btn {
+	background:url(../images/button/closeBtn_normal.png) no-repeat;
+	display: block; overflow:hidden; text-align:left; text-indent:-300px;
+	width:21px; height:21px;  position:relative; top:8px;
+	float:right;
+}
+.playlist h1.title .col_LR .inner .sidebar .close_btn:hover {background:url(../images/button/closeBtn_down.png) no-repeat;}
+.playlist h1.title .col_LR .inner .con h2 { height:35px; line-height:35px; color:#333; font-weight:bold;}
+.playlist h1.title .col_LR .inner .con h2 .icon {width:20px; height:20px; background:url(../images/player/icon_playlist.png) no-repeat; display:block; float:left; position: relative; top:10px;}
+
+.playlist .list_content {}
+.playlist .list_content ul {}
+.playlist .list_content ul li {color:#555; display:block; margin: 2px 0; height:24px;}
+.playlist .list_content ul li:hover, .playlist .list_content ul li.current { background:#b7cbef;}
+
+.playlist .list_content ul li:hover a, .playlist .list_content ul li.current a {color:#385486;}
+.playlist .list_content ul li a {color:#555; text-decoration:none; display:block; background:url(../images/icon/icon_dot2.png) no-repeat 0 50%; padding-left:20px;}
+.playlist .list_content ul li a:hover {}
+
+/******************************/
+.audio_player {}
+.photo_player {}
+
+.photo_player .player_container {width:100%;}
+.photo_player .col_LR2 {width:100%;}
+.photo_player .col_LR2 .sidebar {width:0;}
+.photo_player .col_LR2 .con {margin-right:0 !important;}
+
+.photo_player .showcase-thumbnail {
+	height:87px; overflow:hidden;
+}
+
+.showcase-thumbnail-caption { color:#fff;}
+.showcase-content img {width:100%;}
+.photo_player .showcase-thumbnail-restriction {/* width:882px !important; */width: 892px !important; margin-left: 10px;}
+.showcase-thumbnail-button-backward .showcase-thumbnail-horizontal {left: 10px;}
+
+
+
+
+
+
+
+

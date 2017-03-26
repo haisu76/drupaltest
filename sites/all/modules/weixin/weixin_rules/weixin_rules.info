@@ -1,0 +1,8 @@
+name = weixin rules 
+description = weixin rules
+package = weixin
+core = 7.x
+dependencies[] = weixin
+dependencies[] = rules
+files[]=weixin_rules.rules.inc
+

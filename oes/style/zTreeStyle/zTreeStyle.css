@@ -1,0 +1,274 @@
+@import "zTreeIcons.css";
+
+/*-------------------------------------
+zTree Style
+
+version:	2.0
+author:		Hunter.z
+email:		hunter.z@263.net
+website:	http://code.google.com/p/jquerytree/
+
+-------------------------------------*/
+
+.tree {
+	margin:0;
+	padding: 5px;
+	color:#333;
+	font-size:13px;
+	font-family:宋体, Microsoft YaHei, Tahoma, Arial;
+}
+
+.tree li {
+	padding:0;
+	list-style:none;
+	line-height:30px;
+	text-align:left;
+	white-space:nowrap;
+}
+
+.tree li ul {
+	margin:0;
+	padding:0 0 0 18px;
+}
+
+.tree li ul.line { background:url(./img/line_conn.gif) 0 0 repeat-y; }
+
+.tree li a {
+	padding:0;
+	margin:0 0px 0 0;
+	cursor:pointer;
+	color:#333;
+	text-decoration:none;
+}
+
+/* zTree 的节点被选中状态 */
+.tree li a.curSelectedNode {
+	/* background-color:#FFE6B0; 
+	color:#000;
+	border:1px #FFB951 solid;  */
+	/*
+	opacity:0.8;
+	filter:alpha(opacity=80);
+	*/
+}
+
+.curSelectedNode {
+	height:23px;
+	line-height:23px;
+	background:#66baf7 url(../../images/btn_down.png) repeat-x;
+	border:1px solid #236bde !important;
+	color:#fff !important;
+	text-decoration:none;
+	
+}
+
+/* zTree 的节点被选中后且处于编辑状态 */
+.tree li a.curSelectedNode_Edit {
+	line-height: 23px;
+	background:#66baf7 url(../../images/btn_down.png) repeat-x bottom;
+	color:#000;
+	border:1px solid #01c1ff;
+	/*
+	opacity:0.8;
+	filter:alpha(opacity=80);
+	*/
+}
+
+/* zTree 的节点成为拖拽源节点的目标状态 */
+.tree li a.tmpTargetNode {
+	background-color:#316AC5;
+	color:white;
+	border:1px #316AC5 solid;/*
+	opacity:0.8;
+	filter:alpha(opacity=80);
+	*/
+}
+
+.tree li a input.rename {
+	height:19px;
+	width:50%;
+	border:1px solid #fea800; background:#fffce3;
+	position:relative; top:1px;
+	padding:0 3px;
+	margin:0;
+	font-size:13px;
+}
+
+.tree li button {
+	width:18px;
+	height:18px;
+	padding:0;
+	margin:0;
+	vertical-align:middle;
+	border:0 none;
+	
+	cursor: pointer;
+}
+
+.tree li button.ico {
+	padding:0;
+	margin:0 2px 0 0;
+}
+
+.tree li button.edit { background:url("../../images/icon/edit.png") no-repeat scroll 0 0 transparent;  margin:0 5px;}
+.tree li button.remove { background:url("../../images/icon/delete.png") no-repeat scroll 0 0 transparent; margin:0 5px;}
+/* a .edit, a .remove {position:relative; top:0px; left:10px; text-align:right;} */
+a .edit, a .remove {float:right;width:100%; position:relative; top:-20px; right:5px; text-align:right;;}
+
+.tree li button.chk {
+	width:13px;
+	height:13px;
+	padding:0;
+	margin:0 3px 0 0;
+	vertical-align:middle;
+	border:0 none;
+	cursor: auto;
+}
+
+.tree li button.chk.checkbox_false_full { background:url("./img/checkbox.png") no-repeat scroll 0 0 transparent; }
+
+.tree li button.chk.checkbox_false_full_focus { background:url("./img/checkbox.png") no-repeat scroll 0 -12px transparent; }
+
+.tree li button.chk.checkbox_false_part { background:url("./img/checkbox.png") no-repeat scroll 0 -72px transparent; }
+
+.tree li button.chk.checkbox_false_part_focus { background:url("./img/checkbox.png") no-repeat scroll 0 -84px transparent; }
+
+.tree li button.chk.checkbox_true_full { background:url("./img/checkbox.png") no-repeat scroll 0 -24px transparent; }
+
+.tree li button.chk.checkbox_true_full_focus { background:url("./img/checkbox.png") no-repeat scroll 0 -36px transparent; }
+
+.tree li button.chk.checkbox_true_part { background:url("./img/checkbox.png") no-repeat scroll 0 -48px transparent; }
+
+.tree li button.chk.checkbox_true_part_focus { background:url("./img/checkbox.png") no-repeat scroll 0 -60px transparent; }
+
+.tree li button.chk.radio_false_full { background:url("./img/radio.png") no-repeat scroll 0 0 transparent; }
+
+.tree li button.chk.radio_false_full_focus { background:url("./img/radio.png") no-repeat scroll 0 -12px transparent; }
+
+.tree li button.chk.radio_false_part { background:url("./img/radio.png") no-repeat scroll 0 -72px transparent; }
+
+.tree li button.chk.radio_false_part_focus { background:url("./img/radio.png") no-repeat scroll 0 -84px transparent; }
+
+.tree li button.chk.radio_true_full { background:url("./img/radio.png") no-repeat scroll 0 -24px transparent; }
+
+.tree li button.chk.radio_true_full_focus { background:url("./img/radio.png") no-repeat scroll 0 -36px transparent; }
+
+.tree li button.chk.radio_true_part { background:url("./img/radio.png") no-repeat scroll 0 -48px transparent; }
+
+.tree li button.chk.radio_true_part_focus { background:url("./img/radio.png") no-repeat scroll 0 -60px transparent; }
+
+.tree li button.switch_root_open { background:url(./img/minus_root.gif); }
+
+.tree li button.switch_root_close { background:url(./img/plus_root.gif); }
+
+.tree li button.switch_roots_open { background:url(./img/minus_top.gif); }
+
+.tree li button.switch_roots_close { background:url(./img/plus_top.gif); }
+
+.tree li button.switch_center_open { background:url(./img/minus_center.gif); }
+
+.tree li button.switch_center_close { background:url(./img/plus_center.gif); }
+
+.tree li button.switch_bottom_open { background:url(./img/minus_bottom.gif); }
+
+.tree li button.switch_bottom_close { background:url(./img/plus_bottom.gif); }
+
+.tree li button.switch_noLine_open { background:url(./img/minus_noLine.gif); }
+
+.tree li button.switch_noLine_close { background:url(./img/plus_noLine.gif); }
+
+.tree li button.switch_root_docu { background:none; }
+
+.tree li button.switch_roots_docu { background:url(./img/line_top.gif); }
+
+.tree li button.switch_center_docu { background:url(./img/line_center.gif); }
+
+.tree li button.switch_bottom_docu { background:url(./img/line_bottom.gif); }
+
+.tree li button.switch_noLine_docu { background:none; }
+
+.tree li button.ico_loading { background:url(./img/loading.gif) no-repeat scroll 1px 1px transparent; }
+
+
+.tree li button.ico_open { background:url(./img/folder_Open.gif); margin-right: 5px; }
+.tree li button.ico_close { background:url(./img/folder_Close.gif); margin-right: 5px;}
+
+.tree li button.ico_docu { background:url(./img/page.gif); margin-right: 5px;}
+
+
+.tree INPUT.checkbox {
+	padding:0;
+	margin:0 2px 0 0;
+	width:18px;
+	height:18px;
+	vertical-align:middle;
+}
+
+/* zTree 的根成为拖拽源节点的目标状态 */
+.tmpTargetTree {
+	background-color:#FFE6B0;
+	border:0px #FFB951 solid;/*
+	opacity:0.8;
+	filter:alpha(opacity=80);
+	*/
+}
+
+button.tmpzTreeMove_arrow {
+	width:16px;
+	height:16px;
+	padding:0;
+	margin:2px 0 0 1px;
+	border:0 none;
+	position:absolute;
+	background:url(./img/moveArrow.png) no-repeat scroll 0 0 transparent;
+}
+
+.zTreeDragUL {
+	margin:0;
+	padding:0;
+	position:absolute;
+	background-color:#cfcfcf;
+	border:1px #00B83F dotted;/*
+	opacity:0.8;
+	filter:alpha(opacity=80);
+	*/
+}
+
+.zTreeMask {
+	z-index:10000;
+	background-color:#cfcfcf;
+	opacity:0.0;
+	/* filter:alpha(opacity=50); */
+	position:absolute;
+}
+
+.tree span {}
+
+/******************************/
+.tree li a {
+	height:23px; line-height:23px;
+	text-decoration:none;
+	border:1px solid #fff;
+	display:block;
+	margin-left: 36px;
+	margin-top: -27px;	*margin-top:-20px;
+	height:23px; overflow:hidden; /* 不定义高度与溢出，会导致最后一项有问题(因为2个按钮使用了float:right) */
+}
+
+.tree li a:hover {
+	background:#3ca4f3 url(../../images/btn_normal.png) repeat-x bottom;
+	color:#3582da !important;
+	border:1px solid #01c1ff;
+	text-decoration:none;
+	
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,444 @@
+<?php
+define("WEIXIN_SEED_LENGTH",8);
+include(drupal_get_path('module', 'weixin') .'/includes/weixin_user.report.inc');
+include(drupal_get_path('module', 'weixin') .'/includes/weixin.message.inc');
+include(drupal_get_path('module', 'weixin') .'/includes/weixin_clients.inc');
+
+function weixin_permission() {
+	return array(
+		'access all weixin message' => array(
+		'title' => t('Access all weixin message'),
+		'description' => t('Allow to acess all weixin message'),
+		),
+		'access all weixin user info' => array(
+		'title' => t('Access all weixin user info'),
+		'description' => t('Allow to access all weixin user info'),
+		),
+		'access weixin configure' => array(
+		'title' => t('weixin configuration'),
+		'description' => t('Allow to do configure of weixin module'),
+		),
+		'access weixin stats' => array(
+		'title' => t('Access weixin stats'),
+		'description' => t('Allow to view weixin stats'),
+		),
+		'manage qrcode' => array(
+		'title' => t('Access qrcode manage'),
+		'description' => t('Allow to manage weixin qrcode'),
+		),
+		'manage multi clients' => array(
+		'title' => t('manage multi clients'),
+		'description' => t('Allow to manage multi clients'),
+		),
+		'allow weixin binding' => array(
+		'title' => t('Allow binding with weixin account'),
+                ),
+	);
+}
+
+function weixin_menu() {
+	$items['weixin'] = array(
+		'title' => 'Weixin',
+		'access callback' => TRUE,
+		'page callback' => 'weixin_page',
+		/*
+		'access callback' => TRUE,
+		'file' => 'includes/weixin_user.report.inc',
+		'type' => MENU_LOCAL_TASK,
+		'context' => MENU_CONTEXT_PAGE | MENU_CONTEXT_INLINE,
+		*/
+		'type' => MENU_NORMAL_ITEM,
+	);
+
+	$items['weixin/info'] = array(
+		'title' => 'information',
+//		'access callback' => TRUE,
+		'page callback' => 'weixin_message',
+		'file' => 'includes/weixin.message.inc',
+		/*
+		'access callback' => TRUE,
+		'file' => 'includes/weixin_user.report.inc',
+		'type' => MENU_LOCAL_TASK,
+		'context' => MENU_CONTEXT_PAGE | MENU_CONTEXT_INLINE,
+		*/
+		'access callback' => 'user_access',
+		'access arguments' => array('access all weixin message'),
+		'type' => MENU_NORMAL_ITEM,
+	);
+
+	$items['weixin/info/user'] = array(
+		'title' => 'user information',
+		'page callback' => 'weixin_user_info',
+//		'access callback' => TRUE,
+		'access arguments' => array('access all weixin user info'),
+		/*
+		'access callback' => 'webform_results_access',
+		'page arguments' => array(1, FALSE, '50'),
+		'access callback' => 'webform_results_access',
+		'access arguments' => array(1),
+		*/
+		'file' => 'includes/weixin_user.report.inc',
+		'type' => MENU_LOCAL_TASK,
+	);
+
+	$items['weixin/info/user_autocomplete_callback'] = array(
+		'page callback' => 'weixin_user_autocomplete_callback',
+		'file' => 'includes/weixin.message.inc',
+		'access callback' => TRUE,
+		'type' => MENU_CALLBACK,
+	);
+
+	$items['weixin/info/message'] = array(
+		'title' => 'message',
+//		'page callback' => 'weixin_message',
+//		'access callback' => TRUE,
+		/*
+		'access callback' => 'webform_results_access',
+		'page arguments' => array(1, FALSE, '50'),
+		'access callback' => 'webform_results_access',
+		'access arguments' => array(1),
+		*/
+		'type' => MENU_DEFAULT_LOCAL_TASK,
+	);
+
+	$items['weixin/configuration'] = array(
+		'title' => 'configuration',
+		'page callback' => 'weixin_basic_configuration',
+//		'access callback' => TRUE,
+		'access arguments' => array('access weixin configure'),
+		/*
+		'access callback' => 'webform_results_access',
+		'page arguments' => array(1, FALSE, '50'),
+		'access callback' => 'webform_results_access',
+		'access arguments' => array(1),
+		*/
+		'file' => 'includes/weixin.configuration.inc',
+		'type' => MENU_NORMAL_ITEM,
+	);
+
+	$items['weixin/configuration/basic'] = array(
+		'title' => 'basic configuration',
+		/*
+		'page callback' => 'weixin_basic_configuration',
+		'access callback' => TRUE,
+		'file' => 'includes/weixin.configuration.inc',
+		*/
+		/*
+		'access callback' => 'webform_results_access',
+		*/
+		/*
+		'access callback' => 'webform_results_access',
+		'access arguments' => array(1),
+		*/
+		'type' => MENU_DEFAULT_LOCAL_TASK,
+	);
+
+	$items['weixin/configuration/interface'] = array(
+		'title' => 'interface configuration',
+		'page callback' => 'weixin_interface_configuration',
+		'access arguments' => array('access weixin configure'),
+		'file' => 'includes/weixin.configuration.inc',
+		'type' => MENU_LOCAL_TASK,
+	);
+
+	$items['weixin/configuration/reply'] = array(
+		'title' => 'reply configuration',
+		'page callback' => 'weixin_reply_configuration',
+		'access arguments' => array('access weixin configure'),
+		'file' => 'includes/weixin.configuration.inc',
+		'type' => MENU_LOCAL_TASK,
+	);
+
+	$items['weixin/stats'] = array(
+		'title' => 'weixin statistics',
+		'page callback' => 'weixin_statistics',
+//		'access callback' => TRUE,
+		'access arguments' => array('access weixin stats'),
+		'type' => MENU_NORMAL_ITEM,
+	);
+
+	$items['weixin/stats/message'] = array(
+		'title' => 'weixin message statistics',
+		'type' => MENU_DEFAULT_LOCAL_TASK,
+		'weight' => 1,
+	);
+
+	$items['weixin/stats/reply'] = array(
+		'title' => 'weixin reply statistics',
+		'page callback' => 'weixin_reply_statistics',
+//		'access callback' => TRUE,
+		'access arguments' => array('access weixin stats'),
+		'weight' => 2,
+		'type' => MENU_LOCAL_TASK,
+	);
+	$items['weixin/stats/menu'] = array(
+		'title' => 'weixin menu statistics',
+		'page callback' => 'weixin_menus_statistics',
+		'access arguments' => array('access weixin stats'),
+//		'page arguments' => array('tabledrag_example_parent_form'),   	
+		'type' => MENU_LOCAL_TASK,
+		'weight' => 2,
+	);
+
+	$items['weixin/stats/map'] = array(
+		'title' => 'weixin location map statistics',
+		'page callback' => 'weixin_map_statistics',
+//		'access callback' => TRUE,
+		'access arguments' => array('access weixin stats'),
+		'weight' => 3,
+		'type' => MENU_LOCAL_TASK,
+	);
+
+	$items['weixin/qrcode'] = array(
+		'title' => 'weixin qrcode market',
+		'page callback' => 'weixin_qrcode_configuration',
+		'access arguments' => array('manage qrcode'),
+		'file' => 'includes/weixin.qrcode.inc',
+		'type' => MENU_NORMAL_ITEM,
+	);
+
+	$items['weixin/qrcode/configuration'] = array(
+		'title' => 'weixin qrcode configuration',
+		'type' => MENU_DEFAULT_LOCAL_TASK,
+		'weight' => 1,
+	);
+
+	$items['weixin/qrcode/stats'] = array(
+		'title' => 'weixin QRcode statistics',
+		'page callback' => 'weixin_qrcode_statistics',
+		'access arguments' => array('manage qrcode'),
+		'weight' => 2,
+		'type' => MENU_LOCAL_TASK,
+	);
+
+	/* weixin multi clients */
+	$items['weixin/clients'] = array(
+		'title' => 'weixin multi clients',
+		'page callback' => 'weixin_clients_configuration',
+		'access arguments' => array('manage multi clients'),
+		'file' => 'includes/weixin_clients.inc',
+		'type' => MENU_NORMAL_ITEM,
+	);
+
+	$items['weixin/clients/chat_log'] = array(
+		'title' => 'weixin multi clients chat log',
+		'page callback' => 'weixin_clients_chat_log',
+		'access arguments' => array('manage multi clients'),
+		'weight' => 2,
+		'type' => MENU_LOCAL_TASK,
+	);
+
+	$items['weixin/clients/configuration'] = array(
+		'title' => 'weixin mutli clients configuration',
+		'type' => MENU_DEFAULT_LOCAL_TASK,
+		'weight' => 1,
+	);
+
+	/*
+	$items['weixin/menus'] = array(
+		'title' => 'weixin custom menu',
+		'page callback' => 'weixin_menus_configuration',
+		'access arguments' => array('access weixin configure'),
+//		'page arguments' => array('tabledrag_example_parent_form'),   	
+		'file' => 'includes/weixin.menus.inc',
+		'type' => MENU_NORMAL_ITEM,
+	);
+
+
+	$items['weixin/menus/configuration'] = array(
+		'title' => 'weixin custom menu',
+		'type' => MENU_DEFAULT_LOCAL_TASK,
+		'weight' => 1,
+	);
+	*/
+	$items['user/%user/weixin'] = array(
+		'title' => 'Weixin binding',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('weixin_user_binding',1),
+		'file' => 'includes/weixin_binding.inc',
+		'type' => MENU_LOCAL_TASK,
+		'access callback' => 'weixin_user_access',
+//		'access callback' => TRUE,
+		'access arguments' => array(1),
+	);
+	$items['user/%user/weixin_qrcode_callback'] = array(
+		'page callback' => 'weixin_qrcode_callback',
+		'page arguments' => array(1),
+		'type' => MENU_CALLBACK,
+		'file' => 'includes/weixin_binding.inc',
+		'access callback' => 'weixin_user_access',
+		'access arguments' => array(1),
+	);
+	return $items;
+}
+
+function weixin_theme() {
+	$theme = array(
+		'weixin_page' => array(
+			'template' => 'templates/weixin_page',
+			'file'	   => 'includes/weixin_stats.inc',
+		),
+		'weixin_statistics' => array(
+			'template' => 'templates/weixin_statistics',
+			'file'	   => 'includes/weixin_stats.inc',
+		),
+		'weixin_reply_statistics' => array(
+			'template' => 'templates/weixin_reply_statistics',
+			'file'	   => 'includes/weixin_stats.inc',
+		),
+		'weixin_map_statistics' => array(
+			'template' => 'templates/weixin_map_statistics',
+			'file'	   => 'includes/weixin_stats.inc',
+		),
+
+		'weixin_qrcode_statistics' => array(
+			'template' => 'templates/weixin_qrcode_statistics',
+			'file'	   => 'includes/weixin_stats.inc',
+		),
+		'weixin_menus_statistics' => array(
+			'template' => 'templates/weixin_menu_statistics',
+			'file'	   => 'includes/weixin_stats.inc',
+		),
+		/*
+		'weixin_menus_configuration_form' => array(
+			'render element' => 'form',
+			'file' => 'includes/weixin.menus.inc',
+		),
+		'tabledrag_example_parent_form' => array(
+			'render element' => 'form',
+			'file' => 'includes/weixin.menus.inc',
+		),
+		*/
+		'weixin_clients_chat_log' => array(
+			'template' => 'templates/weixin_clients_chat_log',
+			'file'	   => 'includes/weixin_clients.inc',
+		),
+
+	);	
+	return $theme;
+}
+
+function weixin_statistics() {
+	return theme('weixin_statistics');
+}
+
+function weixin_map_statistics() {
+	return theme('weixin_map_statistics');
+}
+function weixin_reply_statistics() {
+	return theme('weixin_reply_statistics');
+}
+
+function weixin_qrcode_statistics() {
+	return theme('weixin_qrcode_statistics');
+}
+
+function weixin_clients_chat_log() {
+	return theme('weixin_clients_chat_log');
+}
+
+function weixin_menus_statistics() {
+	return theme('weixin_menus_statistics');
+}
+
+function weixin_info() {
+	return "welcome";
+}
+
+function weixin_page() {
+	return theme('weixin_page');
+}
+function weixin_message() {
+//	$wechatObj->responseMsg();
+	return get_weixin_message_table();
+}
+
+function weixin_user_info() {
+	$header = weixin_user_list_header();
+	$rows = weixin_get_user_table_rows();
+	$output = '';
+	$output .= theme('table',array('header' => $header,'rows'=>$rows));
+	return $output;
+//	return theme('weixin_user_list', array('weixin_user_list' => $user_list));
+}
+
+/*
+function weixin_form_alter(&$form, $form_state, $form_id) {
+	if ($form_id == 'node_admin_content') {
+		if (isset($form_state['values']['operation']) && $form_state['values']['operation'] == 'send to weixin user') 		     {
+//			dpm($form_state);
+			return weixin_nodes_group_confirm($form, $form_state, array_filter($form_state['values']['nodes']));
+		}
+	}
+}
+*/
+
+function weixin_nodes_group_submit($form, &$form_state) {
+	if (isset($form_state['values']['operation']) && $form_state['values']['operation'] == 'send to weixin user') {
+//		dpm($form_state);
+		return weixin_nodes_group_confirm($form, $form_state, array_filter($form_state['values']['nodes']));
+	}
+}
+
+function weixin_nodes_group_confirm($form, &$form_state, $nodes) {
+//  dpm($form);
+  $form['nodes'] = array('#prefix' => '<ul>', '#suffix' => '</ul>', '#tree' => TRUE);
+  // array_filter returns only elements with TRUE values
+  foreach ($nodes as $nid => $value) {
+    $title = db_query('SELECT title FROM {node} WHERE nid = :nid', array(':nid' => $nid))->fetchField();
+    $form['nodes'][$nid] = array(
+      '#type' => 'hidden',
+      '#value' => $nid,
+      '#prefix' => '<li>',
+      '#suffix' => check_plain($title) . "</li>\n",
+    );
+  }
+  $form['operation'] = array('#type' => 'hidden', '#value' => 'send');
+  $form['#submit'][] = 'node_multiple_delete_confirm_submit';
+  $confirm_question = format_plural(count($nodes),
+                                  'Are you sure you want to send this item?',
+                                  'Are you sure you want to send these items?');
+  return confirm_form($form,
+                    $confirm_question,
+                    'admin/content', t('This action cannot be undone.'),
+                    t('Send'), t('Cancel'));
+}
+
+
+/*
+function weixin_node_submit($form, &$form_state) {
+	if($form->op == "Save" && $form->status == 1 && $form->weixin_vertical_tabs['enabled'] == 1)
+	{
+		weixin_node_send($form);
+	}
+}
+*/
+
+function weixin_node_operations() {
+	$operations = array (
+		'send to weixin user' => array(
+			'label' => t('send to weixin users'),
+			'callback' => 'weixin_nodes_send',
+//			'callback' => NULL,
+//			'behavior' => array(),
+		),
+	);
+	return $operations;
+}
+
+/*
+
+function weixin_nodes_send() {
+	dpm($nodes);
+}
+*/
+
+function weixin_init() {
+	drupal_add_css(drupal_get_path('module', 'weixin') . '/css/weixin_style.css');
+	drupal_add_js(drupal_get_path('module', 'weixin') . '/js/weixin_js.js');
+//	$request_val = weixin_send_user('oUejwjqrIt_MddKHuZ4VXyBSfjgc','test');
+//	dpm($request_val);
+//	weixin_user_autocomplete_callback('bjfany');
+	$wechatObj = new wechatCallback();
+	$wechatObj->valid();
+}

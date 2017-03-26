@@ -1,0 +1,1 @@
+function getHrefConn(){var a=$("input[name=model]:checked").val();"1"==a&&(a=$("#group_id").val());var b=$("input[name=del]:checked").val();window.location.href="./userCtl.php?a=importUserBindingCol&selectId="+(b+a);return!1};

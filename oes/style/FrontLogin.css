@@ -1,0 +1,450 @@
+/*login css*/
+* {
+	margin: 0;
+	padding: 0
+}
+/******************************/
+html, body {
+	line-height: 2em;
+	background: #fcfcfc;
+	height: 100%;
+	font-family: 宋体, arial;
+	font-weight: normal;
+}
+/******************************/
+/*前台登陆*/
+.login_box {
+	margin: 0 auto;
+	width: 510px;
+	height: 260px;
+	background: #edf5ff;
+	border: 1px solid #acc3e4;
+	border-radius: 3px;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+.login_box .inner {
+	padding: 15px;
+	_padding-bottom: 0;
+}
+.login_box h1 {
+	height: 40px;
+	background: url(../images/login/admin_title_bg_line_blue.png) repeat-x bottom;
+}
+.login span.icon_login {
+	width: 24px;
+	height: 24px;
+	float: left;
+	margin-right: 8px;
+}
+.login span.icon_ot {
+	background: url(../images/oT_logo_s.png) no-repeat;
+}
+.login h1 span.icon_oe {
+	background: url(../images/oT_logo_s.png) no-repeat;
+}
+.login_box h1 span.name_product {
+	color: #333;
+	font-size: 20px;
+	float: left;
+	margin-right: 5px;
+}
+.login_box h1 span.name_title {
+	color: #03309d;
+	font-size: 20px;
+	float: left;
+	margin-right: 8px;
+}
+.login_box_con {
+	font-size: 12px;
+}
+.login_box_con .inner {
+	padding: 15px 0;
+}
+.login_box dl {
+	display: block;
+	margin-bottom: 10px;
+	clear: both;
+	overflow: hidden;
+}
+.login_box dl dt {
+	display: block;
+	float: left;
+	width: 122px;
+	text-align: right;
+}
+.login_box dl dd {
+	float: left;
+	display: block;
+	padding-top: 2px;
+}
+/*add 2012 12 03*/
+.login_box dl dd a {
+	color: #555;
+	text-decoration: none;
+}
+.input_login {
+	width: 260px;
+	height: 21px;
+	border: 1px solid #ccc;
+	padding: 0 3px;
+}
+.input_login_cp {
+	width: 88px;
+	height: 21px;
+	border: 1px solid #ccc;
+	padding: 0 3px;
+}
+.login_box .input_login:hover, .login_box .input_login_cp:hover {
+	border: 1px solid #42a7f4;
+}
+.login_box label {  float:left; margin-top:3px;  line-height:20px;
+	margin-right: 10px;
+}
+.login_box label .checkbox {
+	margin-right: 5px;
+	position: relative;
+	vertical-align: middle;
+}
+.cp_area {
+	height: 30px;
+}
+.login_box_con dd.forget_pwd {
+	/*margin-left: 90px; */float:left; line-height:26px;
+}
+.login_box_con dd.login_box_cp {
+	margin-right: 5px;
+}
+.login_box_con dd.login_box_cp a {
+}
+.login_box_con dd.login_box_cp a img {
+	margin-right: 10px;
+	position: relative;
+	vertical-align: top;
+}
+.login_box_con .btn_area {
+	margin-top: 20px; float:left;
+	/*text-align: center */
+}
+.auto_login select{float:left; margin-top:5px;  height:20px; line-height:20px;}
+.login_box_con .btn_area a { float:left;
+	margin-left: 80px;
+}
+.col_login {
+}
+.col_login .inner {
+}
+.col_login .login_sidebar {
+	float: left;
+	width: 350px;
+}
+.col_login .login_content {
+	margin-left: 355px !important; /* margin-left:457px; */
+	height: auto !important;
+}
+.fore_login .login_sidebar h1 {
+	font-size: 20px;
+	color: #333;
+	position: relative;
+	top: 130px;
+	_margin-top: 130px;
+	margin-left: 80px;
+}
+.fore_login .login_sidebar h1 .name_product {
+	float: left;
+	font-size: 20px;
+	color: #333;
+	margin-right: 5px;
+}
+.fore_login .login_sidebar h1 .name_title {
+	color: #03309D;
+	float: left;
+	font-size: 20px;
+	margin-right: 5px;
+	display: none;
+}
+/******************************/
+.login_1col {
+}
+.login_1col .login_sidebar {
+	display: none !important;
+}
+.login_1col .login_content {
+	margin: 0 auto !important;
+}
+.tip .close_btn {
+	float: right;
+	margin-right: -2px;
+	margin-left: 5px;
+	position: relative;
+	top: 2px;
+}
+.login_box_con .popup {
+	margin-left: 5px;
+	_margin-top: -2px;
+	_width: 255px;
+}
+.login_box_con .popup .left {
+}
+.login_box_con .popup .right {
+}
+/******************************/
+
+.fore_login .login_box {
+	width: 380px;
+	background: none;
+	border: none;
+	box-shadow: none;
+}
+.fore_login .login_box h1 span.name_title {
+	color: #333;
+}
+.fore_login .login_box h1 {
+	background: url(../images/login/admin_title_bg_line_gray.png) repeat-x bottom;
+}
+.fore_login .login_box .icon_login {
+	display: none;
+}
+.fore_login .login_box span.name_product {
+	display: none;
+}
+.fore_login .login_box dl dt {
+	text-align: left;
+	width: 80px;
+}
+.fore_login .login_box .login_box_con {
+}
+/*前台登陆结束*/
+
+
+/******************************/
+.tip_error {
+	background: #fff1f1 url(../images/popup_bg_02.png) repeat-x scroll center bottom;
+	border: 1px solid #F9A0A0;/* color:#cf0000; */
+}
+.tip_ok {
+	background: #eeffeb url(../images/popup_bg_01.png) repeat-x bottom;
+	border: 1px solid #5bd749; /* color:#0fa000; */
+}
+.input_error {
+	background: #fff2f2;
+	border: 1px solid #f9a0a0;
+	color: #cf0000;
+}
+.input_ok {
+	background: #e7ffe5;
+	border: 1px solid #12bd00;
+	color: #0fa000;
+}
+/******************************/
+.fore_login {
+	margin: 0 auto;
+	width: 1000px !important;
+}
+.fore_login .login_box { /* margin-left:0 !important; */
+}
+/* button */
+.shadow {
+	-moz-box-shadow: rgb(150,150,150) 0 0 20px;
+	-webkit-box-shadow: rgb(150,150,150) 0 0 20px;
+	box-shadow: rgb(150,150,150) 0 0 20px;
+}
+/******************************/
+.btn, .btn2, .btn3 {
+	width: 80px;
+	height: 23px;
+	line-height: 23px;
+	overflow: hidden;
+	background: url(../images/button/btn3_normal.png) repeat-x top !important;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	color: #687586 !important;
+	margin-right: 10px;
+	border-radius: 3px;
+	border: 1px solid #c7cdd8;
+	margin-bottom: 2px; /* add 2012 11 21  */
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	/* behavior: url(../js/ie-css3.htc); */
+	zoom: 1;
+	position: relative;
+	font-weight: normal !important;
+	font-size: 13px !important;
+	vertical-align: top;
+}
+.btn4 {
+	width: 80px;
+	height: 23px;
+	line-height: 23px;
+	overflow: hidden;
+	background: url(../images/button/btn4_normal.png) repeat-x top !important;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	color: #fff !important;
+	margin-right: 10px;
+	border-radius: 3px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	/* behavior: url(../js/ie-css3.htc); */
+	zoom: 1;
+	position: relative;
+	font-weight: normal !important;
+	font-size: 13px !important;
+	vertical-align: top;
+}
+.btn:hover, .btn2:hover, .btn3:hover {
+	background: url(../images/button/btn3_over.png) repeat-x top !important;
+	color: #236BDE !important;
+	border: 1px solid #01c1ff;
+	text-decoration: none !important;
+	line-height: 23px !important;
+}
+.btn:active, .btn2:active, .btn3:active {
+	background: url(../images/button/btn3_down.png) repeat-x top !important;
+	color: #000 !important;
+	border: 1px solid #afb6c0;
+	text-decoration: none !important;
+	line-height: 25px !important;
+}
+/*登陆弹出消息框*/
+.popup {
+	background: #fdf8e2;
+	border: 1px solid #f0c36d;
+	padding: 2px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+	position: absolute;
+	z-index: 9999;
+	color: #222;
+	_margin-left: -70px;
+	_margin-top: 25px;
+	_width: 280px;
+	border-radius: 3px;
+}
+.popup .left {
+	float: left;
+	font-size: 13px;
+	color: #222;
+	line-height: 180%;
+}
+.popup .right {
+	float: right;
+	width: 21px;
+	height: 21px;
+}
+.popup .inner {
+	padding: 1px 3px !important;
+}
+.popup .more_block {
+	display: inline-block;
+}
+.popup .inner a.link {
+	color: #6d85bf;
+	font-size: 12px;
+}
+.popup .inner a { /* padding:0 5px; color:#6d85bf; line-height:25px !important; font-size:12px; */
+}
+.popup .inner a:hover {
+	text-decoration: underline;
+	color: #236BDE;
+}
+/* 关闭按钮 */
+.close_btn {
+	display: block;
+	padding: 0 !important;
+	width: 21px;
+	height: 21px;
+	background: url(../images/button/closeBtn_normal.png) no-repeat;
+	position: relative;
+	top: 0px;
+	margin-left: 2px;
+}
+.close_btn:hover {
+	/* background:url(../images/button/closeBtn_down.png) no-repeat; */
+	background: url(../images/button/closeBtn_down2.png) no-repeat;
+}
+/******************************/
+.popup_tick {
+	background: #eeffeb url(../images/popup_bg_01.png) repeat-x bottom;
+	border: 1px solid #5bd749;
+}
+.popup_error {
+	background: #fff1f1 url(../images/popup_bg_02.png) repeat-x bottom;
+	border: 1px solid #f9a0a0;
+}
+.popup_tick .left {
+	line-height: 35px;
+}
+.popup_error .left {
+	line-height: 35px;
+}
+/* 弹出框大ICON */
+.popup .icon_big {
+	width: 32px;
+	height: 32px;
+	float: left;
+	margin-right: 5px;
+	margin-left: 2px;
+	position: relative;
+	top: 4px;
+}
+.icon_info_big, .popup .icon_big {
+	width: 32px;
+	height: 32px;
+	background: url(../images/icon/icon_info_big.png) no-repeat;
+	position: relative;
+}
+.icon_tick_big, .popup_tick .icon_big {
+	width: 32px;
+	height: 32px;
+	background: url(../images/icon/icon_tick_big.png) no-repeat;
+	position: relative;
+}
+.icon_error_big, .popup_error .icon_big {
+	width: 32px;
+	height: 32px;
+	background: url(../images/icon/icon_error_big.png) no-repeat;
+	position: relative;
+}
+/* 大图标在单选文字时定位 */
+.popup_tick .icon_big {
+	top: 1px;
+}
+.popup_error .icon_big {
+	top: 1px;
+}
+/* 关闭按钮在单行文字时定位 */
+.popup_tick .close_btn {
+	top: 7px;
+}
+.popup_error .close_btn {
+	top: 7px;
+}
+/******************************/
+/* 弹出框箭头 */
+.popup_arrow {
+	width: 11px;
+	height: 17px;
+	display: block;
+	position: absolute;
+}
+.popup_arrow_up {
+	background: url(../images/popup_arrow_top.png) no-repeat;
+	position: absolute;
+	left: 0;
+	margin-top: -10px;
+	margin-left: 10px;
+}
+.popup_arrow_down {
+	background: url(../images/popup_arrow_down.png) no-repeat;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin-bottom: -17px;
+	margin-right: 10px;
+}
+.popup_arrow_left {
+	background: url(../images/popup_arrow_left.png) no-repeat;
+	position: absolute;
+	left: 0;
+	margin-left: -7px;
+	margin-top: 7px;
+}

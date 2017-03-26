@@ -1,0 +1,11 @@
+name = weixin notify
+description = weixin private message notify
+package = weixin
+core = 7.x
+dependencies[] = weixin
+dependencies[] = weixin_rules
+dependencies[] = rules
+dependencies[] = privatemsg
+dependencies[] = jquery_colorpicker 
+
+files[]=weixin_notify.module

@@ -1,0 +1,49 @@
+body {font-family:宋体,Arial, Helvetica, sans-serif; font-size:13px; color:#666; margin:0; padding:0;}
+.width160{ width:150px;}
+.width60{ width:50px;}
+.l{ float:left;}
+.r{ float:right;}
+.hidden{ overflow:hidden; display:none;}
+.fontcol9{ color:#999;}
+.paddingtop2{padding-top:2px;}
+.reg_main{margin:0 auto !important;width:641px;height:auto !important;background-image:url(../images/reg_content.gif);}
+.reg_head{ width:641px; height:98px;}
+.reg_headbt{
+	padding-top:50px;
+	clear:both;
+	padding-left:37px;
+	font-size:16px;/* add 2012 12 18*/
+}
+.reg_content{ float:left;width:566px;height:auto !important;min-height:100px; _min-height:100px; *min-height:100px;background-image:url(../images/reg_content.gif);padding-left:38px;padding-right:37px;}
+
+.input{ background-image:url(../images/reg_inputbg.gif); height:15px; border:0; padding-left:5px; padding-right:5px; padding-top:5px; padding-bottom:3px;}
+.input1{background-image:url(../images/reg_validatecodebg.gif); height:15px; border:0; padding-left:5px; padding-right:5px; padding-top:5px; padding-bottom:3px;}
+.reg_bottom{ float:left; width:641px; height:22px; background-image:url(../images/reg_bottom.gif);}
+.reg_sbt01{ width:566px;height:20px; background-image:url(../images/reg_sbt01.gif);}
+.reg_sbt02{ width:566px;height:20px; background-image:url(../images/reg_sbt02.gif);}
+.reg_sbt03{ width:566px;height:20px; background-image:url(../images/reg_sbt03.gif);}
+.reg_bt_width{width:100px; text-align:right; padding-top:1px;}
+.inputbox{ width:160px;}
+.validatecodebox{ width:60px;}
+.datebox{ width:auto !important;min-width:160x;}
+.jgbox{ width:55px; color:#335c8a;}
+.jgbox a:link{ color:#335c8a; text-decoration:none;}
+
+.jgbox a:hover{ color:#335c8a; text-decoration:underline;}
+.formitem{ padding-bottom:5px; width:566px; height:auto; float:left;}
+.margin5{ margin-top:5px; margin-bottom:5px; margin-right:5px;}
+.cred{ font-size:15px; color:#F60;}
+#reg_form{ width:100%; height:auto;}
+.reg_info{ margin-top:7px;}
+.reg_prompt{color:#999; font-size:12px;}
+.reg_btnbox{ float:left; width:386px;padding-top:10px; padding-left:180px; padding-bottom:0; margin-bottom:0; }
+.reg_btn{ width:80px; height:30px; margin-right:15px; border:0;background-image:url(../images/reg_btn.gif); padding-top:2px; font-size:14px; font-weight:bold; color:#36C;}
+.reg_btn:hover{ width:80px; height:30px; margin-right:15px; border:0;background-image:url(../images/btn.gif); padding-top:2px; font-size:14px; font-weight:bold; color:#36C;}
+.reg_btn1{ width:80px; height:30px; border:0;background-image:url(../images/reg_btn.gif); padding-top:2px; font-size:14px; font-weight:bold; color:#999;}
+.reg_btn1:hover{ width:80px; height:30px; border:0;background-image:url(../images/btn.gif); padding-top:2px; font-size:14px; font-weight:bold; color:#999;}.reg_sbt{ float:left; padding-left:15px; font-weight:bold; color:#3d83c4; height:18px;}
+.reg_rightinfo{ float:right; font-size:10px; padding-top:2px; color:#ffb940;}
+.logo_box{ float:left; padding-left:37px; padding-top:35px;}
+.logo{ float:left; width:30px; height:30px; background-image:url(../images/logo_reg.gif);}
+.logo_text{ float:left; padding-left:10px; font-weight:bold; font-size:22px;}
+.safe_questionbox{}
+.change_password{}

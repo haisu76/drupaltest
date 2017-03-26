@@ -1,0 +1,183 @@
+﻿@import "button.css";
+@import "popup.css";
+
+html,body { height:100%;}
+/******************************/
+/* base */
+/*del 2012 11 26 table tr td*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, tt, var,
+dl, dt, dd, ol, ul, li, input, textarea,
+fieldset, form, label, legend, textarea,
+caption, tbody, tfoot, thead,  th{
+	margin: 0; padding: 0; outline: 0;
+	font-weight: inherit; font-style: inherit;
+    border: 0;
+    /*font-size: 13px;  
+    font-family: 宋体, arial; font-weight:normal; 2012 12 03*/
+	vertical-align: baseline;
+	/*text-decoration:none;
+	color:#555; del 2012 12 03*/
+}
+body {
+	line-height: 2em;
+	background:#fcfcfc;
+}
+
+
+
+ul {
+	list-style: none;
+}
+table {
+	border-collapse:separate;
+	border-spacing: 0;
+	border:none; /*add 2012 11 26*/
+}
+caption, th, td {
+
+	font-weight: normal;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {content: "";}
+blockquote, q {	quotes: "" "";}
+abbr,acronym {border:0;}
+
+input {line-height:22px; position:relative; padding:0; margin-right: 5px;}
+select {position:relative; border:1px solid #ccc; }
+/******************************/
+.indent_1 { text-indent:18px;}
+.indent_2 { text-indent:2em;}
+.float_left {float:left !important;}
+.float_right {float:right !important;}
+
+.align_left {text-align:left;}
+.align_right {text-align:right;}
+.align_center {text-align:center !important;}
+.align_top { vertical-align:top;}
+.align_bottom { vertical-align:bottom;}
+
+.none {display:none !important;}
+.hidden { visibility:hidden !important;}
+.no_padding {padding:0 !important;}
+.no_margin {margin:0 !important;}
+.no_margin_right {margin-right:0 !important;}
+.clear { clear:both !important;}
+.no_scroll { overflow:hidden !important;}
+.no_scroll_x { overflow-x:hidden !important;}
+.no_scroll_y { overflow-y:hidden !important;}
+
+.color_red { color:#cd0000;}
+.color_green { color:#319600;}
+.color_blue { color:#4889f1;}
+
+/******************************/
+.input { width:98%; height:22px; border:1px solid #ccc; line-height:22px;}
+
+textarea { border:1px solid #ccc; line-height:23px; padding:0 3px; resize:none;}
+textarea:hover {border:1px solid #42a7f4;}
+
+/******************************/
+.login_box {
+	margin:0 auto;
+	width:510px; height:260px; 
+	background:#edf5ff;
+	border:1px solid #acc3e4; border-radius:3px;
+	/* filter:glow(color=black,strength=5); */ box-shadow:1px 1px 2px rgba(0,0,0,0.2);
+}
+.login_box .inner {padding:15px; _padding-bottom:0;}
+.login_box h1 { height:40px; background:url(../images/login/admin_title_bg_line_blue.png) repeat-x bottom;}
+
+.login span.icon_login {width:24px; height:24px; float:left; margin-right:8px;}
+.login span.icon_ot {background:url(../images/oT_logo_s.png) no-repeat;}
+.login h1 span.icon_oe {background:url(../images/oT_logo_s.png) no-repeat;}
+
+.login_box h1 span.name_product {color:#333; font-size:20px; float:left; margin-right:5px;}
+.login_box h1 span.name_title {color:#03309d; font-size:20px; float:left; margin-right:8px;}
+/*add 2012 12 03*/
+.login_box_con {
+	font-size: 13px;  
+    font-family: 宋体, arial; font-weight:normal;
+}
+.login_box_con .inner {padding:15px 0;}
+.login_box dl { display:block; margin-bottom:10px; clear:both; overflow: hidden;}
+.login_box dl dt { display:block; float:left; width:122px; text-align:right;}
+.login_box dl dd { float:left; display:block; padding-top:2px;}
+/*add 2012 12 03*/
+.login_box dl dd a{ color:#555; text-decoration:none;}
+
+
+.input_login {width:215px; height:21px; border:1px solid #ccc; padding:0 3px;}
+.input_login_cp {width:88px; height:21px; border:1px solid #ccc; padding:0 3px;}
+
+.login_box .input_login:hover,
+.login_box .input_login_cp:hover {
+	border:1px solid #42a7f4;
+}
+
+.login_box label {margin-right: 10px;}
+.login_box label .checkbox {
+    margin-right:5px;
+    position: relative;
+    vertical-align: middle;
+}
+
+.cp_area { height:30px;}
+.login_box_con dd.forget_pwd { margin-left:90px;}
+.login_box_con dd.login_box_cp {margin-right: 5px;}
+.login_box_con dd.login_box_cp a {}
+.login_box_con dd.login_box_cp a img { margin-right:10px; position:relative; vertical-align:top;}
+
+.login_box_con .btn_area { margin-top:20px;}
+.login_box_con .btn_area a {margin-left:20px;}
+
+/******************************/
+
+
+.tip_error {
+	background:#fff1f1 url(../images/popup_bg_02.png) repeat-x scroll center bottom;
+    border: 1px solid #F9A0A0;
+	/* color:#cf0000; */
+}
+.tip_ok { background:#eeffeb url(../images/popup_bg_01.png) repeat-x bottom; border:1px solid #5bd749; /* color:#0fa000; */}
+
+.input_error { background:#fff2f2; border:1px solid #f9a0a0; color:#cf0000;}
+.input_ok { background:#e7ffe5; border: 1px solid #12bd00; color:#0fa000;}
+
+/******************************/
+.fore_login { margin:0 auto; width:1000px !important;}
+.fore_login .login_box { /* margin-left:0 !important; */}
+
+.col_login {}
+.col_login .inner {}
+.col_login .login_sidebar {float:left; width:350px;}
+.col_login .login_content { margin-left:355px !important; /* margin-left:457px; */ height:auto !important;}
+
+.fore_login .login_sidebar h1 { font-size:20px; color:#333; position:relative; top:130px; _margin-top:130px; margin-left:80px;}
+.fore_login .login_sidebar h1 .name_product { float:left; font-size:20px; color:#333; margin-right:5px;}
+.fore_login .login_sidebar h1 .name_title { color:#03309D;  float:left; font-size:20px; margin-right:5px; display:none;}
+
+/******************************/
+.login_1col {}
+.login_1col .login_sidebar { display:none !important;}
+.login_1col .login_content { margin:0 auto !important;}
+
+.tip .close_btn {float:right; margin-right:-2px; margin-left:5px; position:relative; top:2px;}
+
+.login_box_con .popup {margin-left:5px; _margin-top:-2px; _width:255px;}
+.login_box_con .popup .left {}
+.login_box_con .popup .right {}
+/******************************/
+
+.fore_login .login_box {width:380px; background:none; border:none; box-shadow:none;}
+.fore_login .login_box h1 span.name_title { color:#333;}
+.fore_login .login_box h1 {background:url(../images/login/admin_title_bg_line_gray.png) repeat-x bottom;}
+.fore_login .login_box .icon_login { display:none;}
+.fore_login .login_box span.name_product { display:none;}
+.fore_login .login_box dl dt {text-align:left; width:80px;}
+.fore_login .login_box .login_box_con {}

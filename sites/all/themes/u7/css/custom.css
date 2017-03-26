@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+#navigation{
+	background:none repeat scroll 0 0  #36F	;
+	height: 38px;
+	line-height:38px;
+	min-width::960px;
+}
+
+#navigation{
+	color:#ffffff;
+	display:block;
+	font-size:14px;
+	font-weight:700;
+	padding:0 20px;
+	
+}
+
+#navigation ul li a.active{
+	background-color:#a3dbff;
+}

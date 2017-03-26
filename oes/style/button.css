@@ -1,0 +1,151 @@
+﻿/******************************/
+/* button */
+.shadow {
+  -moz-box-shadow:rgb(150,150,150) 0 0 20px;
+  -webkit-box-shadow:rgb(150,150,150) 0 0 20px;
+  box-shadow:rgb(150,150,150) 0 0 20px;
+}
+
+/******************************/
+.btn, .btn2, .btn3 {
+	width:80px; height:23px; line-height:23px; overflow:hidden;
+	background:url(../images/button/btn3_normal.png) repeat-x top !important;
+	display:inline-block;
+	text-align:center; text-decoration:none;
+	color:#687586 !important;
+	margin-right: 10px;
+	border-radius:3px; border:1px solid #c7cdd8;
+	margin-bottom:2px; /* add 2012 11 21  */
+	
+	box-shadow:0 1px 2px rgba(0,0,0,0.2);
+	/* behavior: url(../js/ie-css3.htc); */
+	zoom: 1; position: relative;
+	
+	font-weight:normal !important; font-size:13px !important;
+	vertical-align: top;
+}
+.btn4{width:80px; height:23px; line-height:23px; overflow:hidden;
+	background:url(../images/button/btn4_normal.png) repeat-x top !important;
+	display:inline-block;
+	text-align:center; text-decoration:none;
+	color:#fff !important;
+	margin-right: 10px;
+	border-radius:3px;
+	
+	box-shadow:0 1px 2px rgba(0,0,0,0.2);
+	/* behavior: url(../js/ie-css3.htc); */
+	zoom: 1; position: relative;
+	
+	font-weight:normal !important; font-size:13px !important;
+	vertical-align: top;}
+
+.btn:hover, .btn2:hover, .btn3:hover {
+	background:url(../images/button/btn3_over.png) repeat-x top  !important;
+	color:#236BDE !important;
+	border:1px solid #01c1ff;
+	text-decoration:none !important;
+	line-height:23px !important;
+}
+
+.btn:active, .btn2:active, .btn3:active {
+	background:url(../images/button/btn3_down.png) repeat-x top  !important;
+	color:#000 !important;
+	border:1px solid #afb6c0;
+	text-decoration:none !important;
+	line-height:25px !important;
+}
+
+/******************************/
+/* 主按钮区(分左中右) */
+.btn_area { margin:8px 0;}
+
+.btn_area .inner {
+	/* width:400px; height:50px;
+	text-align:center;
+	background:#FC9; */
+	
+	position:relative;
+	*width:100%;
+}
+
+.button_center, .btn_area_search, .view_item {
+	width:100%;
+	text-align:center;
+	display:inline-block;
+}
+	.btn_area_search .inner_box, .button_center .inner_box, .view_item .inner_box {margin:0 auto; text-align:center;}
+	.btn_area_search a, .button_center a, .view_item a {/* margin-right:30px; */ margin: 0 15px;}
+
+/******************************/
+
+
+.btn_autowidth .btn,
+.btn_autowidth .btn3
+{
+	padding: 0 8px !important;  width: auto !important;
+}
+
+.btn a { color:#555;}
+.btn_disable { background:#c5c5c5; color:#fff; border:1px solid #b2b2b2;}
+.btn_disable:hover { cursor:default; background:#c5c5c5; border:1px solid #b2b2b2;}
+.btn span.timeout_txt { padding-right:5px; color:#fff;}
+
+.btn2 img {
+	position:relative; top:-2px; *top:0px; padding-right:2px;
+	vertical-align: middle;
+}
+.btn3 span { _padding-top:2px !important;}
+
+.btn_txt {}
+.btn_txt img { position:relative; top:3px; padding-right:5px;}
+
+/******************************/
+.btn_area_default{
+	width:100%; height:50px; line-height:50px; padding-top:10px;
+	display:inline-block;
+}
+
+
+.jump_link {
+	width:100%; height:30px; line-height:30px;
+	margin:10px auto;
+	text-align:center;
+	display:inline-block;
+	border-bottom:1px solid #e6ebf2;
+}
+	.jump_link .inner_box {margin:0 auto; text-align:center;}
+	.jump_link a {/* margin-right:30px; */ margin: 0 15px; color:#6d85bf;}
+	.jump_link a:hover { color:#236BDE; text-decoration:underline;}
+
+
+/******************************/
+a.btn1:link span,
+a.btn2:link span,
+a.btn3:link span { cursor:pointer;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

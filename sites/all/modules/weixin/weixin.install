@@ -1,0 +1,401 @@
+<?php
+
+function weixin_schema() {
+	$schema = array();
+	$schema['weixin_reply_keyword'] = array(
+	'description' => 'The table for weixin message.',
+	'fields' => array(
+		'id' => array(
+		  'description' => 'id.',
+		  'type' => 'serial',
+		  'unsigned' => TRUE,
+		  'not null' => TRUE,
+		),
+		'keyword' => array(
+		  'description' => 'The weixin message id.',
+		  'type' => 'varchar',
+		  'length' => '255',
+		  'not null' => TRUE,
+		),
+		'reply' => array(
+		  'description' => 'The weixin reply message.',
+		  'type' => 'text',
+		  'not null' => TRUE,
+		),
+		'reply_type' => array(
+		  'description' => 'The weixin active status.',
+		  'type' => 'int',
+		  'size' => 'tiny',
+		  'unsigned' => TRUE,
+		  'not null' => TRUE,
+		),
+		'status' => array(
+		  'description' => 'The weixin active status.',
+		  'type' => 'int',
+		  'size' => 'tiny',
+		  'unsigned' => TRUE,
+		  'not null' => TRUE,
+		),
+		'time' => array(
+		  'description' => 'The weixin reply create time.',
+		  'type' => 'int',
+		  'unsigned' => TRUE,
+		  'not null' => TRUE,
+		),
+
+	),
+		'primary key' => array('id'),
+	);
+
+	$schema['weixin_qrcodes'] = array(
+	'description' => 'The weixin market qrcodes.',
+	'fields' => array(
+		'id' => array(
+		  'description' => 'id.',
+		  'type' => 'serial',
+		  'unsigned' => TRUE,
+		  'not null' => TRUE,
+		),
+		'scene' => array(
+		  'description' => 'The weixin qrcode scene.',
+		/*
+		  'type' => 'int',
+		  'unsigned' => TRUE,
+		  'not null' => TRUE,
+		*/
+		  'type' => 'varchar',
+		  'length' => '50',
+		  'not null' => TRUE,
+		),
+		'name' => array(
+		  'description' => 'The weixin qrcode name.',
+		  'type' => 'varchar',
+		  'length' => '255',
+		  'not null' => TRUE,
+		),
+		'type' => array(
+		  'description' => 'The weixin qrcode type.',
+		  'type' => 'varchar',
+		  'length' => '31',
+		  'not null' => TRUE,
+		),
+		'user_type' => array(
+		  'description' => 'The weixin qrcode user type.',
+		  'type' => 'varchar',
+		  'length' => '31',
+		  'not null' => TRUE,
+		),
+		'ticket' => array(
+		  'description' => 'The weixin qrcode ticket.',
+		  'type' => 'text',
+		  'not null' => TRUE,
+		),
+		'expire' => array(
+		  'description' => 'The weixin qrcode expire.',
+		  'type' => 'int',
+		  'unsigned' => TRUE,
+		),
+	),
+		'primary key' => array('id'),
+	);
+
+	$schema['weixin_user'] = array(
+	'description' => 'The table for weixin user.',
+	'fields' => array(
+		'id' => array(
+		  'description' => 'weixin user id.',
+		  'type' => 'serial',
+		  'unsigned' => TRUE,
+		  'not null' => TRUE,
+		),
+		'openid' => array(
+		  'description' => 'The weixin user open id.',
+		  'type' => 'varchar',
+		  'length' => '30',
+		  'not null' => TRUE,
+		),
+		'nickname' => array(
+		  'description' => 'The weixin user nickname.',
+		  'type' => 'varchar',
+		  'length' => '50',
+		  'not null' => TRUE,
+		),
+		'subscribe' => array(
+		  'description' => 'The weixin user subscribe status.',
+		  'type' => 'int',
+		  'size' => 'tiny',
+		  'unsigned' => TRUE,
+		  'not null' => TRUE,
+		),
+		'subscribe_time' => array(
+		  'description' => 'The weixin user subscribe time.',
+		  'type' => 'int',
+		  'unsigned' => TRUE,
+		  'not null' => TRUE,
+		),
+		'sex' => array(
+		  'description' => 'The weixin user sex.',
+		  'type' => 'int',
+		  'size' => 'tiny',
+		  'unsigned' => TRUE,
+		  'not null' => TRUE,
+		),
+		'city' => array(
+		  'description' => 'The weixin user city.',
+		  'type' => 'varchar',
+		  'length' => '255',
+		  'not null' => TRUE,
+		),
+		'country' => array(
+		  'description' => 'The weixin user city.',
+		  'type' => 'varchar',
+		  'length' => '255',
+		  'not null' => TRUE,
+		),
+		'province' => array(
+		  'description' => 'The weixin user province.',
+		  'type' => 'varchar',
+		  'length' => '255',
+		  'not null' => TRUE,
+		),
+		'language' => array(
+		  'description' => 'The weixin user language.',
+		  'type' => 'varchar',
+		  'length' => '255',
+		  'not null' => TRUE,
+		),
+		'headimgurl' => array(
+		  'description' => 'The weixin user img url.',
+		  'type' => 'varchar',
+		  'length' => '255',
+		  'not null' => TRUE,
+		),
+		'groupid' => array(
+		  'description' => 'The weixin user group id.',
+		  'type' => 'varchar',
+		  'length' => '30',
+		  'not null' => TRUE,
+		  'default' => '',
+		),
+	),
+		'primary key' => array('id'),
+	);
+
+	$schema['weixin_msg'] = array(
+	'description' => 'The table for weixin message.',
+	'fields' => array(
+		'id' => array(
+		  'description' => 'id.',
+		  'type' => 'serial',
+		  'unsigned' => TRUE,
+		  'not null' => TRUE,
+		),
+		'msgid' => array(
+		  'description' => 'The weixin message id.',
+		  'type' => 'int',
+		  'size' => 'big',
+		  'unsigned' => TRUE,
+		),
+		'open_user_id' => array(
+		  'description' => 'The weixin openuser id.',
+		  'type' => 'varchar',
+		  'length' => 30,
+		  'not null' => TRUE,
+		  'default' => '',
+		),
+		'from_user_name' => array(
+		  'description' => 'The weixin from user name.',
+		  'type' => 'varchar',
+		  'length' => 30,
+		  'not null' => TRUE,
+		  'default' => '',
+		),
+		'create_time' => array(
+		  'description' => 'The weixin create time.',
+		  'type' => 'int',
+		  'unsigned' => TRUE,
+		  'not null' => TRUE,
+		),
+		'pic_url' => array(
+		  'description' => 'The weixin pic url.',
+		  'type' => 'varchar',
+		  'length' => 255,
+		  'not null' => TRUE,
+		  'default' => '',
+		),
+		'type' => array(
+		  'description' => 'The weixin message type.',
+		  'type' => 'varchar',
+		  'length' => 10,
+		  'not null' => TRUE,
+		  'default' => '',
+		),
+		'content' => array(
+		  'description' => 'The weixin message content.',
+		  'type' => 'text',
+		  'not null' => TRUE,
+		),
+		'location_x' => array(
+		  'description' => 'The weixin location x.',
+		  'type' => 'numeric',
+		  'precision' => 10,
+		  'scale' => 6,
+		),
+		'location_y' => array(
+		  'description' => 'The weixin location y.',
+		  'type' => 'numeric',
+		  'precision' => 10,
+		  'scale' => 6,
+		),
+		'scale' => array(
+		  'description' => 'The weixin location scale.',
+		  'type' => 'int',
+		  'unsigned' => TRUE,
+		),
+		'label' => array(
+		  'description' => 'The weixin message label.',
+		  'type' => 'varchar',
+		  'length' => 255,
+		  'not null' => TRUE,
+		  'default' => '',
+		),
+		'title' => array(
+		  'description' => 'The weixin title.',
+		  'type' => 'text',
+		),
+		'description' => array(
+		  'description' => 'The weixin description.',
+		  'type' => 'text',
+		),
+		'url' => array(
+		  'description' => 'The weixin message url.',
+		  'type' => 'varchar',
+		  'length' => 255,
+		  'not null' => TRUE,
+		  'default' => '',
+		),
+		'event' => array(
+		  'description' => 'The weixin message event.',
+		  'type' => 'varchar',
+		  'length' => 255,
+		  'not null' => TRUE,
+		  'default' => '',
+		),
+		'event' => array(
+		  'description' => 'The weixin message event.',
+		  'type' => 'varchar',
+		  'length' => 255,
+		  'not null' => TRUE,
+		  'default' => '',
+		),
+		'event_key' => array(
+		  'description' => 'The weixin message event key.',
+		  'type' => 'varchar',
+		  'length' => 255,
+		  'not null' => TRUE,
+		  'default' => '',
+		),
+		'format' => array(
+		  'description' => 'The weixin message format.',
+		  'type' => 'varchar',
+		  'length' => 255,
+		  'not null' => TRUE,
+		  'default' => '',
+		),
+		'media_id' => array(
+		  'description' => 'The weixin message media id.',
+		  'type' => 'text',
+		),
+		'recognition' => array(
+		  'description' => 'The weixin message recognition.',
+		  'type' => 'text',
+		),
+		'response' => array(
+		  'description' => 'The weixin response message type.',
+		  'type' => 'varchar',
+		  'length' => 255,
+		  'not null' => TRUE,
+		  'default' => '',
+		),
+		'ip' => array(
+		  'description' => 'The weixin user ip.',
+		  'type' => 'varchar',
+		  'length' => 100,
+		  'not null' => TRUE,
+		  'default' => '',
+		),
+		'ticket' => array(
+		  'description' => 'The weixin user ticket.',
+		  'type' => 'text',
+		),
+		'user_agent' => array(
+		  'description' => 'The weixin user agent.',
+		  'type' => 'text',
+		),
+	),
+	'primary key' => array('id'),
+	);
+	$schema['weixin_validation'] = array(
+	'description' => t('Provides temporary information when binding users and weixin openid'),
+	'fields' => array(
+		'uid' => array(
+			'type' => 'int',
+			'not null' => TRUE,
+			'description' => t('Primary Key: Unique user ID.'),
+		),
+		'seed' => array(
+			'type' => 'varchar',
+			'length' => '50',
+			'not null' => TRUE,
+			'description' => t('Unique Key: seed to display on the web.'),
+		),
+		'validation_code' => array(
+			'type' => 'varchar',
+			'length' => '50',
+			'not null' => TRUE,
+			'description' => t('Unique Key: validation code to match.'),
+		),
+		'expiration_time' => array(
+			'type' => 'int',
+			'description' => t('The expiration time of current seed.'),
+			'not null' => TRUE,
+			'default' => 0,
+		),
+	),
+	'primary key' => array('uid'),
+	'unique keys' => array(
+		'seed' => array('seed'),
+		'validation_code' => array('validation_code'),
+		),
+	'indexes' => array(
+		'expiration_time' => array('expiration_time'),
+		),
+	);
+	$schema['weixin_user_map'] = array(
+	'description' => t('Provides binding information between users and weixin openid'),
+	'fields' => array(
+		'uid' => array(
+			'type' => 'int',
+			'not null' => TRUE,
+			'description' => t('Primary Key: Unique user ID.'),
+		),
+		'wx_openid' => array(
+			'type' => 'varchar',
+			'length' => '50',
+			'not null' => TRUE,
+			'description' => t('Unique Key: weixin_openid.'),
+		),
+		'status' => array(
+			'type' => 'int',
+			'size' => 'tiny',
+			'not null' => TRUE,
+			'default' => 0,
+		),
+	),
+	'primary key' => array('uid'),
+	'unique keys'  => array(
+		'wx_openid' => array('wx_openid'),
+	),
+	);
+	return $schema;
+}

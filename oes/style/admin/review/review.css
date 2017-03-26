@@ -1,0 +1,149 @@
+/* CSS Document */
+html, body {
+	margin: 0;
+	padding: 0;
+	widht: 100%;
+	height: 100%;
+	font-size: 13px;
+	font-family: 宋体, Arial, Microsoft YaHei, Tahoma;
+	text-shadow: 1px 1px 1px #EEE;
+}
+textarea {
+	resize: none
+}
+.box {
+	width: 1030px;
+	margin: 0 auto;
+}
+.button_area_search {
+	height: 30px;
+	margin: 5px 0px 0px 0px;
+}
+.block_6 {
+}
+.block_3 .block_inner {
+	width: 368px;
+	height: 140px;
+}
+.block_3 .block_inner, .block_3 .nav span {
+	background: rgb(168,98,11)
+} /* 首页区块和内页菜单标题背景色 */
+.box_inner {
+	width: 1000px;
+	padding: 0px 15px;
+	margin: 0 auto;
+}
+/* panel_1 */
+.panel_1 {
+	width: 100%;
+	display: inline;
+	margin-bottom: 15px;
+	height: auto !important;
+	float: left;
+ 	*_float:none;
+}
+.panel_1 .title {
+	margin-bottom: 5px;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	color: #3582da;
+	background: url(../../../images/title_bg1.gif) no-repeat;
+}
+.panel_1 .title span {
+	padding-left: 15px;
+	color: #3582da;
+	font-size: 14px;
+}
+.panel_1 .title2 {
+	margin-bottom: 5px;
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	color: #3582da;
+}
+.panel_1 .title2 span {
+	padding-left: 0px;
+	color: #3582da;
+	font-size: 14px;
+}
+.panel_1 .content {
+	clear: both;
+}
+/* 数据列横向排列：每个DL不分行 */
+.data_list_h {
+}
+.data_list_h dl {
+	display: block;
+	float: left;
+	margin: 3px;
+	margin-right: 10px;
+	margin-left: 0;
+}
+.data_list_h dl dt {
+	display: inline-block;
+	float: left;
+	text-align: left;
+}
+.data_list_h dl dd {
+	float: left;
+	margin-right: 10px;
+}
+.data_list_h dl dd input {
+	padding-left: 3px;
+	position: relative;
+	top: -1px;
+}
+/* 数据列横向排列：文字与搜索框各分一行*/
+.data_list_h2 {
+}
+.data_list_h2 dl {
+	display: block;
+	float: left;
+	margin: 3px;
+	margin-right: 10px;
+	margin-left: 0;
+}
+.data_list_h2 dl dt {
+	text-align: left;
+	line-height: 28px;
+}
+.data_list_h2 dl dd {
+	float: left;
+	margin-right: 10px;
+}
+.data_list_h2 dl dd input {
+	padding-left: 3px;
+	position: relative;
+	top: -1px;
+}
+/* 数据列纵向排列：每个DL单独一行 */
+.data_list_v {
+}
+.data_list_v dl {
+	display: block;
+	float: left;
+	clear: left;
+	margin: 3px 10px 0px 0;
+}
+.data_list_v dl dt {
+	display: inline-block;
+	float: left;
+	text-align: left;
+}
+.data_list_v dl dd {
+	float: left;
+	margin-right: 10px;
+}
+.data_list_v dl dd input {
+	padding-left: 3px;
+	position: relative;
+	top: -1px;
+}
+/* dt尺寸 */
+.dt_auto dl dt {
+	width: auto !important;
+}
+.dt1 dl dt {
+	width: 93px;
+}

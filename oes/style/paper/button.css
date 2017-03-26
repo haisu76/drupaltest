@@ -1,0 +1,112 @@
+﻿/******************************/
+/* button */
+/* button */
+.button_center, .btn_area_search, .view_item {
+	width:100%;
+	text-align:center;
+	display:inline-block;
+}
+	.btn_area_search .inner_box, .button_center .inner_box, .view_item .inner_box {margin:0 auto; text-align:center;}
+	.btn_area_search a, .button_center a, .view_item a {/* margin-right:30px; */ margin: 0 15px;}
+
+/******************************/
+/* 主按钮区(分左中右) */
+.btn_area { margin:5px 0;}
+		
+		
+/* btn:默认灰色按钮 */
+.btn_autowidth {padding: 0 8px;  width: auto !important;}
+.btn {
+	width:90px; height:23px; line-height:24px; /* overflow:hidden; */
+	background:url(../images/button/btn_normal.png) repeat-x bottom; color:#555; /* 灰色按钮 */
+	/* background:#66baf7 url(../images/btn2_normal.png) repeat-x bottom; border:1px solid #3079ed !important; color:#fff !important; /* 蓝色按钮 */
+	display:inline-block; 
+	text-align:center; text-decoration:none;
+	margin: 0 5px; border:1px solid #b7bec7;
+	cursor:pointer;
+}
+
+.btn:hover {
+	/* background:url(../images/button/btn_over1.png) repeat-x bottom; color:#5b76b6; border:1px solid #abc4e9; */ /* 蓝灰色按钮 */
+	/* background:url(../images/button/btn_over2.png) repeat-x bottom; color:#fff; border:1px solid #2f5bb7; */  /* 蓝色按钮 */
+	background:url(../images/button/btn_over3.png) repeat-x bottom; color:#333; border:1px solid #01c1ff; /* 淡蓝色按钮 */
+	text-decoration:none;
+}
+.btn a { color:#555;}
+.btn_disable { background:#c5c5c5; color:#fff; border:1px solid #b2b2b2;}
+.btn_disable:hover { cursor:default; background:#c5c5c5; border:1px solid #b2b2b2;}
+.btn span.timeout_txt { padding-right:5px; color:#fff;}
+
+
+/******************************/
+/* 搜索、重置蓝色按钮 */
+.btn2 {
+	width:90px; height:23px; line-height:23px; overflow:hidden;
+	background:#66baf7 url(../images/button/btn2_normal.png) repeat-x bottom !important;
+	display:inline-block; border:0px;
+
+	text-align:center; text-decoration:none;
+	color:#fff !important;
+	border:1px solid #3079ed;
+	
+	margin-right: 10px;
+}
+.btn2:hover {background:#3ca4f3 url(../images/button/btn_over.png) repeat-x bottom  !important; color:#fff !important; border:1px solid #2f5bb7; text-decoration:none;}
+.btn2 img {
+	position:relative; top:-2px; *top:0px; padding-right:2px;
+	vertical-align: middle;
+}
+/******************************/
+
+.btn_txt {}
+.btn_txt img { position:relative; top:3px; padding-right:5px;}
+
+/******************************/
+
+/******************************/
+.btn_area_default{
+	width:100%; height:50px; line-height:50px; padding-top:10px;
+	display:inline-block;
+}
+
+
+.jump_link {
+	width:100%; height:30px; line-height:30px;
+	margin:10px auto;
+	text-align:center;
+	display:inline-block;
+	border-bottom:1px solid #e6ebf2;
+}
+	.jump_link .inner_box {margin:0 auto; text-align:center;}
+	.jump_link a {/* margin-right:30px; */ margin: 0 15px; color:#6d85bf;}
+	.jump_link a:hover { color:#236BDE; text-decoration:underline;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

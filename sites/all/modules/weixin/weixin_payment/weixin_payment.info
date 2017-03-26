@@ -1,0 +1,5 @@
+name = weixin payment
+description = weixin payment
+package = weixin
+core = 7.x
+dependencies[] = weixin

@@ -1,0 +1,51 @@
+<?php
+// $Id: comment.tpl.php,v 1.4.2.1 2008/03/21 21:58:28 goba Exp $
+
+/**
+ * @file comment.tpl.php
+ *  默认的评论主题文�?
+ *
+ * 可以用的相关变量
+ * - $author:  发布drupal评论的作者，带衔接的
+ * - $content: drupal评论的正文内�?
+ * - $date: 这个已经格式化的日期，当然你可以使用$comment->timestamp 这个时间戳变量，使用format_date来重新格式化：比如输�?2009�?1�?2�?这样的格式�?
+ * - $links: 一个操作衔接：比如删除，修改，回复，登录或者注册衔�?
+ * - $new: 如果是最新评论，就用 t('new') 这个函数输出new 这样的标�?
+ * - $picture: drupal评论作者的头像，保护user的衔接地址
+ * - $signature: 作者签�?
+ * - $status:  评论状�?
+ *   comment-unpublished, comment-published or comment-preview.
+ * - $submitted:  包括作者和发布实现的衔接�?
+ * - $title: 标题加衔�?
+ *
+ * 提供两个变量对象
+ * - $comment:  评论对象�?
+ * - $node: Node object the comments are attached to.
+ *
+ * @see template_preprocess_comment() //预处理一些的变量
+ * @see theme_comment()//评论的theme
+ */
+?>
+<div class="comment<?php print ($comment->new) ? ' comment-new' : ''; print ' '. $status ?> clear-block">
+  <?php print $picture ?>
+
+  <?php if ($comment->new): ?>
+    <span class="new"><?php print $new ?></span>
+  <?php endif; ?>
+
+  <h3><?php print $title ?></h3>
+
+  <div class="submitted">
+    <?php print $submitted; //这里想自己定义，可以使用 $author ?>
+  </div>
+
+  <div class="content">
+    <?php print $content ?>
+    <?php if ($signature): ?>
+    <div class="user-signature clear-block">
+      <?php print $signature ?>
+    </div>
+    <?php endif; ?>
+  </div>
+
+</div>

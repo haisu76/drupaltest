@@ -1,0 +1,198 @@
+﻿body, div, dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6, pre, code,
+form, fieldset, legend, input, button,
+textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+	height: 100%;
+}
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 13px;
+	font-family: 宋体, arial;
+	font-weight: normal;
+	vertical-align: baseline;
+	text-decoration: none;
+	color: #555;
+}
+/******************************/
+a {
+	color: #6d85bf;
+}
+a:hover {
+	color: #236BDE;
+	text-decoration: underline;
+}
+ul {
+	list-style: none;
+}
+input {
+	line-height: 22px;
+	position: relative;
+	bottom: 2px;
+	padding: 0;
+	z-index: 100;
+	margin-right: 5px;
+}
+select {
+	position: relative;
+	bottom: 2px;
+	border: 1px solid #ccc;
+}
+.input {
+	width: 98%;
+	height: 22px;
+	border: 1px solid #ccc;
+	line-height: 22px;
+}
+/******************************/
+.admin_login {
+	margin: 0 auto;
+	width: 493px;
+	height: 273px;
+	background: #edf5ff url(../../../images/login/admin_login_bg_top.png) repeat-x top;
+	border: 1px solid #acc3e4;
+	border-radius: 3px;
+	filter: glow(color=black, strength=5);
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+.admin_login .inner {
+	padding: 15px 15px 5px 15px;
+	_padding-bottom: 0;
+}
+.admin_login h1 {
+	height: 40px;
+	background: url(../../../images/login/admin_title_bg_line.png) repeat-x bottom;
+}
+.admin_login h1 span.icon_login {
+	width: 24px;
+	height: 24px;
+	float: left;
+	margin-right: 8px;
+}
+.admin_login h1 span.icon_ot {
+	background: url(../../../images/oT_logo_s.png) no-repeat;
+}
+.admin_login h1 span.icon_oe {
+	background: url(../../../images/oT_logo_s.png) no-repeat;
+}
+.admin_login h1 span.name_product {
+	color: #333;
+	font-size: 20px;
+	float: left;
+	margin-right: 5px;
+}
+.admin_login h1 span.name_title {
+	color: #03309d;
+	font-size: 20px;
+	float: left;
+	margin-right: 8px;
+}
+.admin_login_con {
+}
+.admin_login_con .inner {
+	padding: 15px 0;
+}
+.admin_login dl {
+	display: block;
+	margin-bottom: 10px;
+	clear: both;
+	overflow: hidden;
+}
+.admin_login dl dt {
+	display: block;
+	float: left;
+	width: 125px;
+	text-align: right;
+}
+.admin_login dl dd {
+	float: left;
+	display: block;
+	padding-top: 2px;
+}
+.input_login {
+	width: 215px;
+	height: 21px;
+	border: 1px solid #ccc;
+	padding: 0 3px;
+}
+.input_login_cp {
+	width: 145px;
+	height: 21px;
+	border: 1px solid #ccc;
+	padding: 0 3px;
+}
+.admin_login .input_login:hover, .admin_login .input_login_cp:hover {
+	border: 1px solid #42a7f4;
+}
+.admin_login label {
+	margin-right: 10px;
+}
+.admin_login label .checkbox {
+	margin-right: 5px;
+	position: relative;
+	vertical-align: middle;
+}
+.admin_login_con dd.forget_pwd {
+	margin-left: 65px;
+}
+.admin_login_con dd.admin_login_cp {
+}
+.admin_login_con dd.admin_login_cp a {
+}
+.admin_login_con dd.admin_login_cp a img {
+	margin-right: 5px;
+	position: relative;
+	vertical-align: top;
+}
+.admin_text {
+	float: none;
+	widows: 100%;
+	height: 15px;
+	color: #F00;
+	font-size: 12px;
+	text-align: center;
+	line-height: 15px
+}
+/*button style*/
+
+.admin_login_con .btn_area {
+	margin-top: 15px;
+	_margin-top: 40px
+}
+.align_center {
+	text-align: center !important;
+}
+.btn, .btn2, .btn3 {
+	width: 80px;
+	height: 23px;
+	line-height: 23px;
+	overflow: hidden;
+	background: url(../images/button/btn3_normal.png) repeat-x top !important;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	color: #687586 !important;
+	margin-right: 10px;
+	border-radius: 3px;
+	border: 1px solid #C7CDD8;
+	margin-bottom: 2px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	zoom: 1;
+	position: relative;
+	font-weight: normal !important;
+	font-size: 13px !important;
+	vertical-align: top;
+}
+.btn:hover, .btn2:hover, .btn3:hover {
+	background: url(../images/button/btn3_over.png) repeat-x top !important;
+	color: #236BDE !important;
+	border: 1px solid #01c1ff;
+	text-decoration: none !important;
+	line-height: 23px !important;
+}

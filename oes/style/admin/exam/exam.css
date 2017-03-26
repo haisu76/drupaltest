@@ -1,0 +1,340 @@
+/* CSS Document */
+html, body {
+	margin: 0;
+	padding: 0;
+	widht: 100%;
+	height: 100%;
+	font-size: 13px;
+	font-family: 宋体, Arial, Microsoft YaHei, Tahoma;
+	text-shadow: 1px 1px 1px #EEE;
+}
+textarea {
+	resize: none
+}
+.box {
+	width: 1030px;
+	margin: 0 auto;
+}
+.button_area_search {
+	height: 30px;
+	margin: 5px 0px 0px 0px;
+}
+.block_1 {
+}
+.block_1 .block_inner {
+	width: 368px;
+	height: 140px;
+}
+.block_1 .block_inner, .block_1 .nav span {
+	background: #5455b7;
+} /* 首页区块和内页菜单标题背景色 */
+.box_inner {
+	width: 1000px;
+	padding: 0px 15px;
+	margin: 0 auto;
+}
+/* panel_1 */
+.panel_1 {
+	width: 100%;
+	display: inline;
+	margin-bottom: 15px;
+	height: auto !important;
+	float: left;
+ 	*_float:none;
+}
+.panel_1 .title { float:left;
+	margin: 5px 0;
+	width: 100%;
+	height: 25px;
+	line-height: 18px;
+	color: #3582da;
+	background: url(../../../images/title_bg1.gif) no-repeat;
+}
+.panel_1 .title span {
+	padding-left: 15px;
+	color: #3582da;
+	font-size: 14px;
+}
+.panel_1 .title2 {
+	margin-bottom: 5px;
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	color: #3582da;
+}
+.panel_1 .title2 span {
+	padding-left: 0px;
+	color: #3582da;
+	font-size: 14px;
+}
+.panel_1 .content {
+	clear: both;
+}
+.panel_1 .content table {
+	margin-bottom: 10px;
+}
+.panel_1 .content table th {
+	margin-bottom: 10px;
+	line-height:28px;
+}
+.panel_1 .content table td {
+	line-height: 23px;
+	padding: 4px 4px 4px 0px;
+	*line-height:21px;
+ 	*padding-top:2px;
+}
+.table_content table td {
+	padding-left: 5px !important;
+}
+.panel_1 .content h1 { /* font-weight:bold; */
+}
+.td1 {
+	width: 209px;
+}
+.td2 {
+	width: 137px;
+}
+.td3 {
+	width: 71px;
+}
+.td4 {
+	width: 345px;
+}
+.td5 {
+	width: 113px;
+}
+/* 左右两列布局 */
+.col_full {
+	width: 100%;
+}
+.col_left {
+	float: left;
+}
+.col_left_01{width:50%;}
+
+.col_right {
+	width: 43%;
+	float: right;
+}
+.col_right2 {
+	width: 48%;
+	float: right;
+}
+table1 {
+	text-align: center;
+	border: 0px solid #d9d9d9 !important;
+	*table-layout:fixed;
+	_table-layout: fixed;
+}
+.table1 thead th {
+	color: #666;
+	font-weight: normal;
+	border: 1px solid #d9d9d9;
+	text-align: left;
+	padding: 0 3px;
+}
+.table1 thead th .checkbox, td.align_center .checkbox {
+	position: relative;
+	top: 1px;
+}
+.table1 tbody td {
+	border: 1px solid #d9d9d9;
+	padding: 0 3px !important;
+}
+.table1 tfoot td {
+	background: #e7edf5;
+	height: 21px;
+	border: 1px solid #d9d9d9;
+}
+.auto_width {
+	width: 98%;
+}
+textarea.auto_width {
+	width: 99%;
+}
+.search_item {
+	float: left;
+	_height: 60px;
+	margin: 0 5px;
+	margin-bottom: 10px;
+}
+.con_search span.search_item h1 {
+	height: 20px;
+	font-size: 13px;
+	font-weight: normal; 
+}
+span.search_item input, span.search_item select {
+}
+.search_item .btn, .search_item .btn2 {
+	position: relative;
+	top: -3px;
+}
+.button_area_default {
+	float: left;
+}
+.con_table {
+}
+.con_table table {
+	background: #fff;
+}
+.con_table .table1 input {
+	position: relative;
+	top: 1px;
+	vertical-align: text-top;
+}
+.con_table .table1 thead {
+	text-align: left;
+}
+.con_table .table1 thead th {
+	padding: 0 5px;
+}
+.table1 thead tr {
+	background: #e6ebf2;
+}
+.con_table .table1 tfoot {
+	text-align: left;
+	display: none;
+}
+.con_table .table1 tfoot td {
+	text-align: left;
+	padding: 0 3px;
+}
+.con_table .table1 td {
+	text-align: left;
+	padding: 0 3px;
+}
+.table1 {
+	text-align: center;
+	border: 0px solid #d9d9d9 !important;
+	border-collapse: collapse;
+ 	*table-layout:fixed;
+	_table-layout: fixed;
+}
+.table1 thead th {
+	color: #666;
+	font-weight: normal;
+	border: 1px solid #d9d9d9;
+	text-align: left;
+	padding: 0 3px;
+	line-height: 28px;
+}
+.table1 thead th .checkbox, td.align_center .checkbox {
+	position: relative;
+	top: 1px;
+}
+.table1 tbody td {
+	border: 1px solid #d9d9d9;
+	padding: 0 3px !important;
+}
+.table1 tfoot td {
+	background: #e7edf5;
+	height: 21px;
+	border: 1px solid #d9d9d9;
+}
+/******************************/
+.tablescroll table, .tablescroll div {
+	width: 100% !important;
+}
+.tablescroll_head {
+	margin-bottom: -1px !important;
+	border-bottom: 1px solid #d9d9d9;
+}
+.tablescroll_wrapper {
+	border-top: 1px solid #d9d9d9 !important;
+	border-bottom: 1px solid #d9d9d9;
+}
+.tablescroll_wrapper table {
+	border-top: 0px !important;
+	border-bottom: 0px !important;
+	margin-bottom: 0px !important;
+}
+.tablescroll_wrapper tr.first td {
+	border-top: 0px !important;
+	border-bottom: 0px !important;
+}
+.tablescroll_wrapper tr.last td {
+	border-bottom: 0px !important;
+}
+table.tablescroll_head thead {
+	text-align: left;
+}
+table.tablescroll_head thead th {
+	height: 32px;
+	color: #1A5F9B;
+	font-weight: normal;
+	border: 1px solid #d9d9d9;
+	text-align: left;
+	padding: 0 5px;
+}
+table.tablescroll_wrapper tbody td {
+	height: 32px;
+	border: 1px solid #d9d9d9;
+}
+table.tablescroll_foot tfoot td {
+	text-align: left;
+	padding: 0 3px;
+}
+table.tablescroll_foot td {
+	text-align: left;
+	padding: 0 3px;
+}
+/******************************/
+	
+.panel_1 .toolbar_top {
+	clear: right;
+	display: block;
+	height: 33px;
+}
+.panel_1 .toolbar_top .left {
+	width: 65%;
+	float: left;
+	line-height: 25px;
+}
+.panel_1 .toolbar_top .left p {
+	line-height: 25px;
+}
+.panel_1 .toolbar_top .left input {
+	position: relative;
+	top: 1px;
+}
+.panel_1 .toolbar_top .right {
+	width: 34%;
+	float: right;
+	line-height: 30px;
+	text-align: right;
+}
+.panel_1 .toolbar_top a {
+	margin-right: 5px;
+	display: inline-block;
+}
+.toolbar_top .left label {
+}
+.panel_1 .toolbar_bottom {
+	height: 30px;
+	margin-top: 5px;
+}
+.panel_1 .toolbar_bottom .left {
+	width: 43%;
+	float: left;
+	line-height: 30px;
+}
+.panel_1 .toolbar_bottom .left a {
+	margin: 0 5px;
+	text-decoration: none;
+	color: #1A5F9B;
+}
+.panel_1 .toolbar_bottom .left a:hover {
+	margin: 0 5px;
+	text-decoration: underline;
+	color: #3582da;
+}
+.panel_1 .toolbar_bottom .right {
+	width: 55%;
+	float: right;
+	line-height: 30px;
+	text-align: right;
+}
+hr { height:1px;border-width:0; color:#ddd; background-color:#ddd; margin:5px 0;}
+
+.line_h { height:1px; border-bottom:1px solid #ddd;}
+.line_h .item_num { position:relative; top:9px;}

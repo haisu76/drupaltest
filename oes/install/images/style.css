@@ -1,0 +1,106 @@
+/*
+ Copyright @ 2007-2011 Orivon All Rights Reserved .
+*/
+
+*{ margin:0; padding:0; }
+body{font-family:"宋体"; font-size:12px;}
+img{ border:0;}
+.clear{clear:both;}
+.box{width:866px; margin:24px auto 0 auto;}
+.top{ height:15px; padding:0 25px;}
+.top_img1{ float:left; margin-top:22px;}
+.top_img2{ float:right; margin-top:50px;}
+
+
+.main{ border:solid 1px #1f1f1f; width:823px; margin:0 auto;}
+
+.left{ width:190px; height:623px; background:url(bg_2.jpg) no-repeat; border-right:solid 1px #1f1f1f; position:relative; float:left;}
+.left_1{ position:absolute; left:20px; top:45px; color:#c5c5c5; font-size:14px;}
+.left_1 b{background:url(icon1.gif) no-repeat; width:30px;
+ height:34px; line-height:30px;text-align:center; display:inline-block; font-family:Arial; font-size:16px; color:#fff;}
+.left_1 span{ position:absolute; top:30px; left:36px; width:120px; display:inline-block;}
+.left_1 p.hover b{background:url(icon1_2.gif) no-repeat;}
+.left_1 p.hover span{ font-weight:bold; color:#9ae6ff;}
+
+.left_2{ position:absolute; right:8px; top:168px; color:#c5c5c5; font-size:14px; width:120px;}
+.left_2 b{background:url(icon2.gif) no-repeat;width:30px; 
+	height:34px; line-height:30px;text-align:center; display:inline-block; font-family:Arial; font-size:16px; color:#fff; position:absolute; right:0; top:0;}
+.left_2 p.hover b{background:url(icon2_2.gif) no-repeat;}
+.left_2 span{ position:absolute; top:30px; right:40px; width:120px; display:inline-block; text-align:right;}
+.left_2 p.hover span{ font-weight:bold; color:#9ae6ff;}
+
+
+.right{ width:632px; float:left;clear:right}
+.right_1 p{ border:solid 1px #5c5c5c;height:67px; background:#4d4d4d; padding:10px 0 0 17px; color:#e0e3e6;font-family:Arial; font-weight:bold; line-height:30px; font-size:17px;}
+.right_1 p span{ font-size:28px;}
+.right_1 p b{ font-size:22px;}
+.right_1 p .span_title{ float:left;font-size:22px;}
+.right_1 p span{ float:right;font-size:15px;clear:left}
+.right_2{ font-size:14px; font-weight:bold; color:#e6eaed; background:#4d4d4d; height:42px; line-height:42px; border-bottom:solid 1px #1f1f1f;border-top:solid 1px #1f1f1f;}
+.right_2 p{ border:solid 1px #5c5c5c; padding-left:17px; }
+.right_3{ line-height:20px; color:#333;overflow:auto; height:402px; padding:4px 12px 12px 0; margin:3px 0;}
+.right_4{border-top:solid 1px #1f1f1f;}
+.right_4 p{border:solid 1px #5c5c5c; text-align:center; height:46px;_height:44px;background:#4d4d4d; padding-top:27px;}
+.right_4 a{ display:inline-block; margin:0 6px;}
+
+.bottom{ text-align:center;padding:20px 0 0 0;}
+
+.table1{ margin:25px 0 0 25px;}
+.table1 td{ padding:2px 4px;}
+.table1_b{ color:#3774b3;}
+.input_text{ background:url(input.gif) no-repeat; width:202px; height:29px; line-height:29px; padding-left:5px; border:0; font-size:14px;}
+.table2{ margin:16px 0 0 0;}
+.table2 td{ padding:6px 3px;}
+.color_999{ color:#999; line-height:16px;}
+
+.env_check{margin:15px 0 10px 53px;width:84%}
+	.env_check th {color:#6CA1B4; font-weight:700; text-align:left;margin-left:3px}
+		.env_check .env_w, .env_check .env_nw, .env_check .padleft{text-align:left;margin-left:3px}
+		.env_check .pdleft1{ padding-left:2px; }
+
+.env_w{ background:url(bg.gif) no-repeat 45px -148px;  }
+.env_nw{ background:url(bg.gif) no-repeat 45px -197px; }
+
+.tb{ margin:15px 0px 0px 67px; }
+	.tb th{color:#6CA1B4; font-weight:700; text-align:left}	
+		.tb .w, .tb .nw, .tb .padleft{ padding-left: 30px;word-break:break-all }
+		.tb .pdleft1{ padding-left:67px; }
+		.tb .pdleft2{ padding-left:30px;}
+		.tb .wd{width:36px;}
+
+.tb2{ margin:15px 5px 0px 5px; }
+	.tb2 th, .tb2 td{ padding:1px;text-align:left }
+	.tbopt{ width:100px; }
+
+.btnbox{ text-align:center; }
+	.btnbox input{ margin:0 2px; }
+	.btnbox textarea{ margin-bottom:0px; height:150px; }
+
+/* form */
+.txt{ width:200px; }
+
+
+/* file status */
+.w{ background:url(bg.gif) no-repeat 20px -148px;  }
+.nw{ background:url(bg.gif) no-repeat 20px -197px; }
+
+/* space */
+.marginbot{ margin-bottom:20px; }
+.margintop{ margin-top:20px; }
+.red{ color:red; }
+
+.licenseblock{ margin-bottom:15px; padding:8px; height:280px; border:1px solid #EEE; background:#FFF; overflow:scroll; overflow-x:hidden; }
+.license{text-align:center}
+	.license h1{ padding-bottom:10px; font-size:14px; text-align:center; }
+	.license h3{ margin:0; color:#666; }
+	.license p{padding:1px 3px; text-indent:25px; text-align:left; }
+	.license li{margin:2px 0; padding:1px 3px;text-indent:25px;text-align:left;}
+.title{ margin:5px 0 -15px 12px; }
+
+#notice { border: 1px solid #B5CFD9; width: 97%; padding: 5px 0 0 12px; height: 395px;overflow: auto;text-align: left; margin: 5px 0px -10px 9px;}
+
+/* att  */
+.att{ width:814px;text-align:center;  border:1px solid #B5CFD9;margin:10px 0px 0px 20px;font-weight:bold;background-color:#FAD163;padding:5px;}
+
+.demo{margin:100px;text-align:center; }
+.demo input{padding:20px 20px }

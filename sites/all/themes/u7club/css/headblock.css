@@ -1,0 +1,35 @@
+.skin-default {
+    position:relative;
+    z-index:10;
+    width:100%;
+    height:260px;
+    overflow:hidden;
+}
+.views-slideshow-controls-bottom {
+    position:absolute;
+    bottom:10px;
+    right:5px;
+    z-index:20;
+    font-size:12px;
+}
+.views_slideshow_pager_field_item{
+    height:10px;
+    line-height:10px;
+    width:10px;
+    display:block;
+    padding:5px;
+    margin-right:5px;
+    background:#993300;
+    border:1px solid #FF6600;
+    text-decoration: none;
+    text-align:center;
+    color:#FEFEFF;
+    cursor: pointer;
+    float:left;
+}
+.views_slideshow_pager_field_item.active {
+    padding:5px;
+    background:#FFC68C;
+    border:1px solid #FF6600;
+    color:#FF6600;
+}

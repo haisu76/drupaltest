@@ -1,0 +1,96 @@
+﻿* { padding:0; margin:0; /* color:#555555; */}
+html {margin:0; padding:0;}
+body {background:#a2d6ef url(../images/bg.jpg) repeat-x; }
+
+html,body {widht:100%; height:100%;}
+
+html,body,table,td,div,li,a,input {font-size:13px; font-family:宋体,Microsoft YaHei, Tahoma, Arial ;margin:0; padding:0;}
+
+div {padding:0px; margin:0;}
+img {border:0;}
+
+li {padding:0px; margin:0px; text-decoration: none;}
+ul {padding:0px; margin:0px; text-decoration: none;}
+
+/*
+a {color:#555;}
+a:link	{ color:#555; }
+a:visited { color:#548dd4;}
+a:hover	{color:#ff4200; cursor:pointer;}
+a:active { color:#548dd4;}
+*/
+table {border-collapse:collapse;}
+
+
+.layout_table {width:100%; height:100%; border-collapse:collapse; border-spacing:0;}
+
+/******************************/
+
+.margin1 {margin-top:16px;}
+.float_left {float:left !important;}
+.float_right {float:right !important;}
+
+.align_left {text-align:left;}
+.align_right {text-align:right;}
+.none {display:none;}
+
+/*====================================================*/
+.login {
+	height: 420px;
+    margin: 0 auto;
+    padding: 40px 40px 0;
+    width: 970px;
+	background:url(../images/login_box_bg.jpg) repeat-x;
+	margin:0 auto;
+}
+.login_title {width:1000px;height:38px; margin-bottom:5px;}
+.login_pic {float:left;width:586px;height:262px;}
+
+.bg_green {background:#66CC00 !important;}
+.bg_blue {background:#1ba0e1 !important;}
+.bg_orange {background:#eca100 !important;}
+
+.login_body_light, .login_box {background:url(../images/login_light.png) no-repeat top right; /* width:370px; height:260px; */}
+
+.login_body {width:370px; height:262px; background:#000 url() no-repeat; float:left; margin-left:14px; /* padding:12px 34px; */}
+.login_box { 
+	padding:20px 40px 10px 35px;
+}
+
+.login_body .title {widht:100%; height:42px; font-size:22px ;color:#fff;}
+.login_body .title img { position:relative; vertical-align:middle; padding-right:10px;}
+
+.login_body .content { width:100%; overflow:hidden; color:#fff; font-size:13px; }
+.login_body .content table {width:275px;}
+
+.login_body .content table td {height:25px; padding:10px 3px; color:#fff;}
+.login_body .content table td .checkbox {margin-right:5px; position:relative; top:2px;}
+.login_body .content table td a {color:#fff;}
+.login_body .content table td a:hover {color:#00ffea;}
+
+
+.login_body .content table .leftcol {width:55px; text-align:right;}
+.login_body .content .input {width:100%; height:23px; border:1px solid #999999; padding:0px 3px;}
+/******************************/
+/* 按钮与主样式内的共用 */
+/*
+.btn1 {
+	width:95px; height:30px; line-height:30px;
+	background:url(../images/btn1_normal.png) no-repeat;
+	display:inline-block; border:0px;
+	float:left;
+	text-align:center; text-decoration:none;
+	color:#333 !important;
+}
+.btn1:hover {background:url(../images/btn1_down.png) no-repeat; color:#ff4200 !important;}
+.btn1 img { position:relative; top:4px; padding-right:7px; 
+	_top:2px;
+	_padding-top:5px;
+}
+*/
+/******************************/
+
+
+
+
+	

@@ -1,0 +1,15 @@
+﻿body { background:#fcfcfc !important;}
+
+.item_block {width:240px;_width:236px; height:160px; /* background:#FFCC99; */}
+.item_block .block_inner { background:none !important; width:auto !important;}
+.item_block .icon { display:none;}
+.item_block .content h1 { color:#6d85bf; font-size:15px; border-bottom:1px solid #e9e9e9;}
+.item_block .content .menu_inner a {color:#555;}
+.item_block .content .menu_inner a:hover {color:#236BDE;}
+
+.item_block .block_inner  { padding:0 5px;}
+
+.~hl {
+    height: 160px !important;
+}
+

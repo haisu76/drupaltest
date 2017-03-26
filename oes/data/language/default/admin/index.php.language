@@ -1,0 +1,1 @@
+a:2:{i:2;a:2:{s:7:"a=login";a:1:{s:32:"/views/admin/index/login.tpl.php";i:1330069398;}s:0:"";a:2:{s:32:"/views/admin/index/index.tpl.php";i:1330069982;s:23:"/views/admin/header.php";i:1330069982;}}i:1;a:1:{s:7:"a=index";a:1:{s:24:"用户名或密码错误";a:1:{s:0:"";a:3:{i:1;i:1327653293;i:2;s:2:"90";i:0;s:0:"";}}}}}

@@ -1,0 +1,13 @@
+name = League Lineup
+description = Lineups and substitutions for games
+core = 7.x
+package = League
+dependencies[] = league_event
+dependencies[] = league_game
+
+; Information added by Drupal.org packaging script on 2014-04-24
+version = "7.x-1.0-beta6"
+core = "7.x"
+project = "league"
+datestamp = "1398376432"
+

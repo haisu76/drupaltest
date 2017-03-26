@@ -1,0 +1,5 @@
+name = weixin menus 
+description = weixin menus
+package = weixin
+core = 7.x
+dependencies[] = weixin

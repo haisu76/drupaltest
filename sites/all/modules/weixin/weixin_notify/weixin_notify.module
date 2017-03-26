@@ -1,0 +1,134 @@
+<?php
+include(drupal_get_path('module', 'weixin_rules') .'/weixin_rules.rules.inc');
+/*
+function weixin_notify_init() {
+	//dpm('weixin notify init');
+}
+*/
+
+function weixin_notify_menu() {
+	$items['weixin/configuration/notify_template'] = array(
+		'title' => 'notify tempate configuration',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('weixin_notify_configure_form'),
+		'access arguments' => array('access weixin configure'),
+//		'file' => 'includes/weixin.configuration.inc',
+		'type' => MENU_LOCAL_TASK,
+	);
+	return $items;
+}
+
+function weixin_notify_configure_form_submit($form, &$form_state) {
+	//dpm($form_state);
+//	variable_set('template_id',$form_state['values']['template_id']);
+	variable_set('template_color',$form_state['values']['template_color']);
+}
+
+function _weixin_notify_is_enabled($uid, $type) {
+//  $notifications = &drupal_static(__FUNCTION__, array());
+//  Cache the result set in case this method is executed in batched operation which will perform many unnecessary repeated selects for the same user
+//  //dpm($notifications);
+//  if (!isset($notifications[$uid]) ) {
+//    $wechat_notification = db_query('SELECT :type FROM {weixin_message_notify} WHERE user_id = :uid', array(':type' => $type,':uid' => $uid))->fetchField();
+    $wechat_notification = db_select('weixin_message_notify','wn')->fields('wn',array($type))->condition('user_id',$uid)->execute()->fetchField();
+    //dpm($wechat_notification);
+    if ($wechat_notification === FALSE) { //db_result returns FALSE if result was not found.
+      $wechat_notification = variable_get('wechat_notify_default', TRUE);
+    }
+    $notifications[$uid] = $wechat_notification;
+//  }
+//  //dpm($notifications);
+  return $notifications[$uid];
+}
+
+function weixin_notify_form_alter(&$form, &$form_state, $form_id) {
+	//dpm($form_id);
+	if($form_id == "user_profile_form" || $form_id == "user_register_form") {
+		$form['weixin'] = array(
+			'#type' => 'fieldset',
+			'#title' => t('weixin notify setting'),
+			'#collapsible' => TRUE,
+			'#collapsed' => FALSE,
+			'#weight' => 10,
+		);
+
+		$form['weixin']['weixin_pm_send_notifications'] = array(
+				'#type' => 'checkbox',
+				'#title' => t('Notify user of new private messages by wechat'),
+				'#default_value' => _weixin_notify_is_enabled($form['#user']->uid, 'wechat_pm_notify_is_enabled'),
+				'#weight' => 10,
+		);
+		$form['weixin']['weixin_login_send_notifications'] = array(
+				'#type' => 'checkbox',
+				'#title' => t('Notify user of login website'),
+				'#default_value' => _weixin_notify_is_enabled($form['#user']->uid, 'wechat_login_notify_is_enabled'),
+				'#weight' => 10,
+		);
+		$form['weixin']['weixin_points_send_notifications'] = array(
+				'#type' => 'checkbox',
+				'#title' => t('Notify user of user points'),
+				'#default_value' => _weixin_notify_is_enabled($form['#user']->uid, 'wechat_user_points_notify_is_enabled'),
+				'#weight' => 10,
+		);
+	}
+}
+
+function weixin_notify_user_update(&$edit, $account, $category) {
+  //dpm($edit);
+  if (isset($edit['weixin_pm_send_notifications'])) {
+    db_merge('weixin_message_notify')
+      ->fields(array('wechat_pm_notify_is_enabled' => $edit['weixin_pm_send_notifications'],
+			'wechat_login_notify_is_enabled' => $edit['weixin_login_send_notifications'],
+			'wechat_user_points_notify_is_enabled' => $edit['weixin_points_send_notifications']))
+      ->key(array('user_id' => $account->uid))
+      ->execute();
+  }
+}
+
+
+function weixin_notify_configure_form($form, $form_state) {
+	$form=array();
+	$form['description']=array(
+		'#type' => 'item',
+		'#markup' => t('Please configure the notify template.'),
+	);
+	/*
+        $form['template_id'] = array (
+                '#type' => 'textfield',
+                '#title' => t('template id'),
+		'#default_value' => variable_get('template_id'),
+        );
+	*/
+	$form['template_color'] = array (
+		'#type' => 'jquery_colorpicker',
+		'#title' => t('Color'),
+		'#default_value' => variable_get('template_color','FFFFFF'),
+	);
+	$form['submit'] = array(
+		'#type' => 'submit',
+		'#value' => 'Save changes',
+	);
+	return $form;
+}
+
+/*
+function weixin_notify_privatemsg_message_insert($message) {
+	//dpm('weixin send notify message');
+	//dpm($message);
+//	$adm_user = user_load(1);
+	$template_id = variable_get('template_id');
+	$template_color = sprintf("#%s",variable_get('template_color'));
+	//dpm($template_color);
+	$template_type ="message";
+	$data['first']['value'] = t('you got message from !username',array('!username'=>$message->author->name));
+	$data['keyword1']['value'] = $message->subject;
+	$data['keyword2']['value'] = format_date($message->timestamp,'short');
+	foreach($message->recipients as $user) {
+		$user_obj = user_load($user->uid);
+		if (isset($user_obj) && _weixin_notify_is_enabled($user->uid)) {
+			weixin_user($user_obj,$template_id,$template_type,$data,$template_color);
+		}
+	}
+}
+
+*/

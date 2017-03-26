@@ -1,0 +1,44 @@
+﻿.dialog {
+	z-index:99999; background:#fff; border:1px solid #496383; box-shadow:0 2px 15px rgba(0,0,0,0.5);
+	position:absolute; left:25%; top:25%; /* 定位例子 */
+}
+.dialog_signup {position:absolute; left:25%; top:25%;}
+.dialog_signup .con .inner { margin:0 auto; padding: 10px 30px !important;}
+
+.dialog .dialog_inner {}
+
+.dialog h2.title { height:30px; width:100%; line-height:30px; background:url(../images/dialog_header.png) repeat-x;}
+.dialog h2.title .title_inner { padding:0 10px;}
+.dialog h2.title .left { height:30px; line-height:30px; cursor:default;}
+.dialog h2.title .left h2 { color:#0a2784;}
+
+.dialog h2.title .right { height:30px; line-height:30px; cursor:default;}
+
+.dialog .con {}
+.dialog .con .inner { margin:0 auto; padding: 10px 10px;}
+.dialog_login .con .inner {padding:10px 0;}
+
+#container {}
+.mask_bg { background:#000; filter:alpha(opacity=80); opacity:0.3; position:absolute; width:100%; height:100%; left:0; top:0; z-index:999;}
+
+.size_01 {width:568px; height:312px;}
+.size_02 {width:568px; height:280px;}
+
+.dialog .close_btn {display: block; overflow:hidden; text-indent:-300px; width:21px; height:21px; background:url(../images/button/closeBtn_normal.png) no-repeat; position:relative; top:5px; left:5px;}
+.dialog .close_btn:hover {background:url(../images/button/closeBtn_down.png) no-repeat;}
+.dialog .close_btn .more_txt { overflow:hidden; text-indent:-300px; width:50px;}
+
+.dialog .btn_area a {margin-left:20px;}
+
+/******************************/
+.dialog .login_box {
+	background:none;
+	border:none;
+	box-shadow:none;
+	_height:220px;
+}
+
+.dialog .login_box h1 { display:none;}
+
+
+

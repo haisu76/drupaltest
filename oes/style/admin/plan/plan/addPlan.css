@@ -1,0 +1,26 @@
+.inner .icon_add,.inner .icon_del{ z-index:auto; position:static;}
+.inner .icon_add .float_div{ border:1px solid #E6E6E6; position:absolute; padding:3px; background-color:#FEFEF2; z-index:200; margin-top:19px;}
+.inner .icon_add .float_div label{ white-space:nowrap; display:block;}
+.inner .whereTitle{ width:425px; color:#6686BD;}
+.inner .whereTitle a{ float:right;}
+.inner .whereBlock{ border:1px solid #DDDDDD; width:400px; padding:0 10px; background-color:#FFFFFF; margin-top:5px;}
+.inner .whereBlock h1{ border-bottom:1px solid #DDDDDD; margin-bottom:0px; padding:2px; font-weight:bold; color:#333333;}
+.inner .whereBlock h1 .icon_add, .inner .whereBlock h1 .icon_del{ float:right; z-index:auto;}
+.inner .whereCourse{ color:#6686BD;}
+.con_input td span input{ width:100px;}
+.col_LR { height:30px;}
+input.num {
+    background: url("../../../../images/button/btn_normal.png") repeat-x scroll center bottom transparent;
+    border: 1px solid #CCCCCC;
+    color: #555555;
+    display: block;
+    float: left;
+    height: 23px;
+    left: 3px;
+    line-height: 23px;
+    margin-right: 8px;
+    position: relative;
+    text-align: center;
+    top: 3px;
+    width: 23px;
+}

@@ -1,0 +1,111 @@
+/* CSS Document */
+html, body {
+	margin: 0;
+	padding: 0;
+	widht: 100%;
+	height: 100%;
+	font-size: 13px;
+	font-family: 宋体, Arial, Microsoft YaHei, Tahoma;
+	text-shadow: 1px 1px 1px #EEE;
+}
+textarea {
+	resize: none
+}
+.box {
+	width: 1030px;
+	margin: 0 auto;
+}
+.button_area_search {
+	height: 30px;
+	margin: 5px 0px 0px 0px;
+}
+.block_14 {
+}
+.block_14 .block_inner {
+	width: 368px;
+	height: 140px;
+}
+.block_14 .block_inner, .block_14 .nav span {
+	background: rgb(167,142,4)
+} /* 首页区块和内页菜单标题背景色 */
+.box_inner {
+	width: 1000px;
+	padding: 0px 15px;
+	margin: 0 auto;
+}
+/* panel_1 */
+.panel_1 {
+	width: 100%;
+	display: inline;
+	margin-bottom: 15px;
+	height: auto !important;
+	float: left;
+ 	*_float:none;
+}
+.panel_1 .title {
+	margin-bottom: 5px;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	color: #3582da;
+	background: url(../../../images/title_bg1.gif) no-repeat;
+}
+.panel_1 .title span {
+	padding-left: 15px;
+	color: #3582da;
+	font-size: 14px;
+}
+.panel_1 .content {
+	clear: both;
+}
+.con_table {
+}
+.con_table table {
+	background: #fff;
+}
+.con_table table tr{
+	line-height:30px;
+}
+.con_tab {
+	width: 100%;
+	margin-top: 5px;
+}
+.con_tab .tab_title {
+	float: none;
+	width: 100%;
+}
+.con_tab .tab_title a {
+	text-align: center;
+	margin-right: 6px;
+	float: left;
+	display: inline-block;
+	height: 25px;
+	line-height: 25px;
+	text-decoration: none;
+	background: #64b4ff;
+	color: #fff;
+	border: 1px solid #cbdeef;
+	border-bottom: none;
+	position: relative;
+	top: 1px;
+	min-width: 75px;
+	padding: 0 8px;
+}
+.con_tab .tab_title a:hover, .con_tab .tab_title .current {
+	margin-right: 6px;
+	color: #64b4ff;
+	background: #fff;
+	border: 1px solid #cbdeef;
+	border-bottom: none;
+	text-decoration: none;
+}
+.con_tab .tab_content {
+	background: #fff;
+	border: 1px solid #cbdeef;
+	padding: 15px;
+	min-height: 130px;
+	overflow: hidden;
+	*display:inline-block;
+}
+.con_tab .tab_content h1 {
+}

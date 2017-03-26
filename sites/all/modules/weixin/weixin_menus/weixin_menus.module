@@ -1,0 +1,37 @@
+<?php
+/*
+function weixin_menus_init() {
+	dpm("wexin menus init");
+}
+*/
+
+
+function weixin_menus_menu() {
+	$items['weixin/menus'] = array(
+		'title' => 'weixin custom menu',
+		'page callback' => 'weixin_menus_configuration',
+		'access arguments' => array('access weixin configure'),
+//		'page arguments' => array('tabledrag_example_parent_form'),   	
+		'file' => 'includes/weixin.menus.inc',
+		'type' => MENU_NORMAL_ITEM,
+	);
+
+
+	$items['weixin/menus/configuration'] = array(
+		'title' => 'weixin custom menu',
+		'type' => MENU_DEFAULT_LOCAL_TASK,
+		'weight' => 1,
+	);
+	return $items;	
+}
+
+function weixin_menus_theme() {
+	$theme = array(
+		'weixin_menus_configuration_form' => array(
+			'render element' => 'form',
+			'file' => 'includes/weixin.menus.inc',
+		),
+	);
+	return $theme;
+}
+
